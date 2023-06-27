@@ -10,6 +10,26 @@
     "password": "password12345"
   },
   {
+    "name": "Terry",
+    "email": "terry@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Valiantsina",
+    "email": "valiantsina@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Ellinor",
+    "email": "ellinor@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Rosa",
+    "email": "rosa@gmail.com",
+    "password": "password12345"
+  },         
+  {
     "name": "Amiko",
     "email": "amiko2k20@aol.com",
     "password": "password12345"

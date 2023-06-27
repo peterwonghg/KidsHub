@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Music Appreciation",
+    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "image_url": "https://www.shutterstock.com/image-photo/couple-traveler-on-top-island-joy-1981822727"
+  },
+  {
+    "title": "Hot Air Baloon",
+    "description": "Piloting Hot Air Baloon",
+    "image_url": "https://www.shutterstock.com/image-photo/bright-hot-air-balloons-sky-cappadocia-1928279081"
+  },
+  {
+    "title": "Photography",
+    "description": "A Photography Course",
+    "image_url": "https://www.shutterstock.com/image-photo/dendera-temple-complex-egypt-hieroglypic-carvings-1921936862"
+  },
+  {
+    "title": "Green Fingers",
+    "description": "Gardening Basics",
+    "image_url": "https://www.shutterstock.com/image-photo/womans-hands-planting-flowers-pot-sun-1757237105"
+  },
+  {
+    "title": "Dolphin Swimmers",
+    "description": "Water Survival for Under 5",
+    "image_url": "https://www.shutterstock.com/image-photo/dendera-temple-complex-egypt-hieroglypic-carvings-1921936862"
+  },
+  {
+    "title": "Offroad Cycling",
+    "description": "Offroad Cycling Tours and Activities",
+    "image_url": "https://www.shutterstock.com/image-photo/smiling-young-woman-cycling-gear-riding-2256501465"
+  }
+]
