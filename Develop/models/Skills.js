@@ -23,6 +23,10 @@ Skills.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    difficulty_rating: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
