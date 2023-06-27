@@ -35,6 +35,10 @@ User.init(
         len: [8],
       },
     },
+    registration_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
   },
   {
     hooks: {
