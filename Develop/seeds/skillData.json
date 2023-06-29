@@ -1,32 +1,26 @@
 [
   {
-    "title": "Music Appreciation",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "image_url": "https://www.shutterstock.com/image-photo/couple-traveler-on-top-island-joy-1981822727"
+    "title": "Alphabet",
+    "description": "Learn the Alphabet",
+    "image_url": "https://www.shutterstock.com/video/clip-1104898829-glowing-neon-line-abc-blocks-icon-isolated",
+    "difficulty_rating": "Moderate"
   },
   {
-    "title": "Hot Air Baloon",
-    "description": "Piloting Hot Air Baloon",
-    "image_url": "https://www.shutterstock.com/image-photo/bright-hot-air-balloons-sky-cappadocia-1928279081"
+    "title": "Addition",
+    "description": "Learn Addition",
+    "image_url": "https://www.shutterstock.com/video/clip-1105198901-animation-hospital-medical-icon-isolateddiagnostics-symbol-medicine",
+    "difficulty_rating": "Basic"
   },
   {
-    "title": "Photography",
-    "description": "A Photography Course",
-    "image_url": "https://www.shutterstock.com/image-photo/dendera-temple-complex-egypt-hieroglypic-carvings-1921936862"
+    "title": "Subtraction",
+    "description": "Learn Subtraction",
+    "image_url": "https://www.shutterstock.com/video/clip-1100302483-minus-sign-animation-on-transparent-background-math",
+    "difficulty_rating": "Basic"  
   },
   {
-    "title": "Green Fingers",
-    "description": "Gardening Basics",
-    "image_url": "https://www.shutterstock.com/image-photo/womans-hands-planting-flowers-pot-sun-1757237105"
-  },
-  {
-    "title": "Dolphin Swimmers",
-    "description": "Water Survival for Under 5",
-    "image_url": "https://www.shutterstock.com/image-photo/dendera-temple-complex-egypt-hieroglypic-carvings-1921936862"
-  },
-  {
-    "title": "Offroad Cycling",
-    "description": "Offroad Cycling Tours and Activities",
-    "image_url": "https://www.shutterstock.com/image-photo/smiling-young-woman-cycling-gear-riding-2256501465"
+    "title": "Skill 4",
+    "description": "Learn Skill 4",
+    "image_url": "https://www.shutterstock.com/video/clip-1104555211-animation-changing-numbers-multiple-symbols-caucasian-girl",
+    "difficulty_rating": "Advanced"    
   }
 ]
