@@ -3,30 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>KidsHub</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  
 
-
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-
-      {{#if logged_in }}
-        <li><a href="/api/users/logout">Logout</a></li>
-      {{else}}
-        <li><a href="/login">Login</a></li>
-      {{/if }}
-    </ul>
-  </nav>
-
+ <header class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="header-title">KidsHub</h1>
+            </div>
+            <div class="col">
+                <div class="text-right">
+                    <a href="#" class="mr-3">Log In</a>
+                    <span>|</span>
+                    <a href="#" class="ml-3">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
   <main>
     {{{ body }}}
   </main>
-
+  
+<footer class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="https://github.com/your-username">GitHub</a>
+            </div>
+            <div class="col">
+                <div class="text-right">
+                    Created by Brenden | Harianto | Paichien
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
