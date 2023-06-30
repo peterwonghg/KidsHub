@@ -19,7 +19,7 @@ Skills.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    imgage_url: {
+    image_url: {
       type: DataTypes.STRING,
       allowNull: false,
     },
