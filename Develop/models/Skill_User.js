@@ -11,7 +11,7 @@ Skill_User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -43,6 +43,14 @@ Skill_User.init(
     }
   },
   {
+    hooks: {
+    beforeBulkCreate: async (skillUsers) => {
+    skillUsers.forEach((skillUser) => {
+    skillUser.enrolment_date = new Date();
+     });
+    },
+
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
