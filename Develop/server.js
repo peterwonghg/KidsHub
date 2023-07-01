@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
@@ -8,6 +9,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const hbs = exphbs.create({
   extname: 'hbs',
+  helpers: {
+    sessionUser: function () {
+      return req.session.user;}}
 });
 
 const app = express();
@@ -30,6 +34,7 @@ app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
