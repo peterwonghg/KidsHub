@@ -34,7 +34,11 @@ Skills.init(
     difficulty_rating: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    background_color:{
+      type: DataTypes.STRING(7),
+      allowNull: false,
+    },
   },
   {
     sequelize,
