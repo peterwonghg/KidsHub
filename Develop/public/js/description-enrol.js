@@ -1,7 +1,8 @@
 const enrollBtn =document.querySelector('.enroll');
+const deleteBtn = document.querySelector('.deleteBtn');
+
 
 const enrollButtonHandler = async (e) => {
-    console.log('asdfasdf');
     const skill_id = e.target.getAttribute('data-id');
 
     const response = await fetch('/api/skills/enrolments',{
@@ -22,8 +23,25 @@ const enrollButtonHandler = async (e) => {
 }
 
 
+const deleteBtnHandler= async (e) => {
+    
+    const skill_id = e.target.getAttribute('data-id');
+
+    const response= await fetch(`/api/skills/${skill_id}`,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+
+    if(response.ok) {
+        location.reload();
+    }else{
+        alert('Failed to delete skill');
+    }
+        
+}
 
 
-  
-
-enrollBtn.addEventListener('click', enrollButtonHandler)
+deleteBtn.addEventListener('click', deleteBtnHandler);
+enrollBtn.addEventListener('click', enrollButtonHandler);

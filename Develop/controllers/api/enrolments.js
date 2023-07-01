@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: true, // Set it to true if using a secure connection (SSL/TLS)
     auth: {
-      user: EMAIL_USER,
-      pass: EMAIL_PASSWORD,
+      user: 'rsstydf@gmail.com',
+      pass: 3213213,
     },
 });
 
@@ -33,11 +33,11 @@ router.post('/', async (req, res) =>{
         const skillEndDate = skillData.end_date;
 
         const mailOptions = {
-            from: EMAIL_USER,
+            from: 'rsstydf@gmail.com',
             to: userEmail,
             subject: `You Have Enroled ${skillTitle} Skill`,
             text: `Hi ${userName}, below is your enroled skill details: ${skillTitle} ${skillDescription}, the start date is ${skillStartDate} and end date is ${skillEndDate}.`,
-            html: '<h1>This is the HTML body of the email</h1>',
+            html: '<h1>Welcome</h1>',
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
