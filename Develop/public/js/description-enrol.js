@@ -1,7 +1,7 @@
 const enrollBtn =document.querySelector('.enroll');
 
 const enrollButtonHandler = async (e) => {
-
+    console.log('asdfasdf');
     const skill_id = e.target.getAttribute('data-id');
 
     const response = await fetch('/api/skills/enrolments',{

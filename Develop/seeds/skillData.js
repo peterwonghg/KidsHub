@@ -4,7 +4,7 @@ const data = [
   {
     title: "Alphabet",
     description: "Learn the Alphabet",
-    image_url: "/image/haha.jpg",
+    image_url: "./images/haha.jpg",
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Moderate"

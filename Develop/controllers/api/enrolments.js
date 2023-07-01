@@ -10,7 +10,6 @@ router.post('/', async (req, res) =>{
           user_id: req.session.user.id,
           skill_id: req.body.skill_id
         });
-    
         res.status(200).json(newEnrolment);
       } catch (err) {
         res.status(400).json(err);
