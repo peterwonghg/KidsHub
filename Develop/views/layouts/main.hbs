@@ -18,9 +18,9 @@
             </div>
             <div class="col">
                 <div class="text-right">
-                    <a href="#" class="mr-3">Log In</a>
+                    <a href="/login/" class="mr-3 logIn">Log In</a>
                     <span>|</span>
-                    <a href="#" class="ml-3">Sign Up</a>
+                    <a href="/login/" class="ml-3 signUp">Sign Up</a>
                 </div>
             </div>
         </div>
@@ -46,5 +46,8 @@
     </div>
 </footer>
 
+{{#if logged_in}}
+  <script src="/KidsHub/Develop/public/js/logout.js"></script>
+{{/if}}
 </body>
 </html>

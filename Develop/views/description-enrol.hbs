@@ -1,12 +1,14 @@
 <div class="container mt-4">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Course Title</h5>
-        <p class="card-text">Course Description</p>
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{description}}</p>
         <h6 class="card-subtitle mb-2 text-muted">$99.99</h6>
         <div class="text-right">
-          <button class="btn btn-primary">Enroll</button>
+          <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
         </div>
       </div>
     </div>
   </div>
+
+  <script src="../public/js/description-enrol.js"></script>

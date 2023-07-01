@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Skills } = require('../../models');
 
+
 router.post('/', async (req, res) => {
   try {
     const newSkill = await Skills.create({
@@ -12,6 +13,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 router.put('/:skill_id', async (req, res) => {
   try {
