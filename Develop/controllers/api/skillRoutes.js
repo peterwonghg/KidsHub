@@ -1,6 +1,17 @@
 const router = require('express').Router();
 const { Skills } = require('../../models');
 
+router.get('/:id', async (req, res) => {
+  try {
+    const skillData = await Skills.findByPk(req.params.id);
+
+    const skill = skillData.get({ plain: true });
+
+    res.status(200).json(skill)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.post('/', async (req, res) => {
   try {

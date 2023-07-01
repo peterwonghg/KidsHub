@@ -21,5 +21,16 @@ const deleteBtnHandler= async (e) => {
     }
 }
 
+const updateBtnHandler= async (e) => {
+    if(e.target.classList.contains('updateBtn')){
+        
+        const skill_id = e.target.getAttribute('data-id');
+        localStorage.setItem('skill_id', skill_id);
+        document.location.replace('/skills/update');
+        
+    }
+}
+
 
 cardContainer.addEventListener('click', deleteBtnHandler);
+cardContainer.addEventListener('click', updateBtnHandler);

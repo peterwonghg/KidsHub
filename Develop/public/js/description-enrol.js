@@ -1,5 +1,6 @@
 const enrollBtn =document.querySelector('.enroll');
 const deleteBtn = document.querySelector('.deleteBtn');
+const updateBtn = document.querySelector('.updateBtn');
 
 
 const enrollButtonHandler = async (e) => {
@@ -23,7 +24,7 @@ const enrollButtonHandler = async (e) => {
 }
 
 
-const deleteBtnHandler= async (e) => {
+const handleDeleteBtn= async (e) => {
     
     const skill_id = e.target.getAttribute('data-id');
 
@@ -42,6 +43,15 @@ const deleteBtnHandler= async (e) => {
         
 }
 
+const handleUpdateBtn= async (e) => {
+    const skill_id = e.target.getAttribute('data-id');
+        localStorage.setItem('skill_id', skill_id);
+        document.location.replace('/skills/update');
+}
 
-deleteBtn.addEventListener('click', deleteBtnHandler);
+
+
+
+deleteBtn.addEventListener('click', handleDeleteBtn);
 enrollBtn.addEventListener('click', enrollButtonHandler);
+updateBtn.addEventListener('click', handleUpdateBtn)
