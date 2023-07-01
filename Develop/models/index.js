@@ -15,7 +15,7 @@ Skill_User.belongsTo(Users, {
 Users.belongsToMany(Skills, {
   through:{
     model:Skill_User, as: 'skills',
-    foreignKey: 'user_id'
+    unique: false,
   }
 });
 

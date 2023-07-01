@@ -1,34 +1,31 @@
-<div class="container mt-4">
-    <h2>Profile Page</h2>
+{{#*inline "profile"}}
+<div class="container">
+  <h1 class="mt-4">{{user.name}}</h1>
+  <p>Email: {{user.email}}</p>
+  <p>Registration Date: {{formatDate user.registration_date}}</p>
 
-    <div class="card mt-4">
-      <div class="card-body">
-        <h5 class="card-title">User Name</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Enrolled Skills</h6>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card mb-3">
-              <div class="card-body">
-                <h6 class="card-title">Skill 1</h6>
-              </div>
+  <h2 class="mt-4">Enrolled Skills:</h2>
+  <div class="row">
+    {{#each user.skills}}
+    <div class="col-md-6">
+      <div class="panel panel-default skill-panel">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="{{this.image_url}}" alt="{{this.title}}" class="skill-image">
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card mb-3">
-              <div class="card-body">
-                <h6 class="card-title">Skill 2</h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card mb-3">
-              <div class="card-body">
-                <h6 class="card-title">Skill 3</h6>
-              </div>
+            <div class="col-sm-9">
+              <h3>{{this.title}}</h3>
+              <p>{{this.description}}</p>
+              <p>Difficulty Rating: {{this.difficulty_rating}}</p>
+              <p>Start Date: {{formatDate this.start_date}}</p>
+              <p>End Date: {{formatDate this.end_date}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    {{/each}}
   </div>
+</div>
+{{/inline}}
