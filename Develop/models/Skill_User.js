@@ -33,14 +33,6 @@ Skill_User.init(
       type: DataTypes.DATE, 
       allowNull: false,
     },
-    start_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    end_date: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    }
   },
   {
     hooks: {
@@ -49,7 +41,9 @@ Skill_User.init(
     skillUser.enrolment_date = new Date();
      });
     },
-
+    beforeCreate: async(skillUser) => {
+      skillUser.enrolment_date= new Date();  
+    }
     },
     sequelize,
     timestamps: false,
