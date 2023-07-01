@@ -4,7 +4,7 @@ const data = [
   {
     title: "Alphabet",
     description: "Learn the Alphabet",
-    image_url: "./images/haha.jpg",
+    image_url: "/images/abc.png",
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Moderate",
@@ -13,7 +13,7 @@ const data = [
   {
     title: "Addition",
     description: "Learn Addition",
-    image_url: "https://www.shutterstock.com/video/clip-1105198901-animation-hospital-medical-icon-isolateddiagnostics-symbol-medicine",
+    image_url: "/images/addition.png",
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Basic",
@@ -22,7 +22,7 @@ const data = [
   {
     title: "Subtraction",
     description: "Learn Subtraction",
-    image_url: "https://www.shutterstock.com/video/clip-1100302483-minus-sign-animation-on-transparent-background-math",
+    image_url: "/images/subtraction.png",
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Basic",
@@ -31,7 +31,7 @@ const data = [
   {
     title: "Skill 4",
     description: "Learn Skill 4",
-    image_url: "https://www.shutterstock.com/video/clip-1104555211-animation-changing-numbers-multiple-symbols-caucasian-girl",
+    image_url: "/images/4.png",
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Advanced",
