@@ -1,21 +1,22 @@
-<div class="content">
-    <div class="container">
-        <div class="row card-container">
-            {{#each skills as |skill|}}
-            <div class="col-lg-4 col-md-6">
-                <div class="card colorful-card">
-                    <div class="card-image" style="background-color: {{backgroundColor}}">
-                        <img src="{{image_url}}" alt="Image for {{title}}">
-                    </div>
-                    <div class="card-content">
-                        <h5 class="card-title">{{title}}</h5>
-                        <p class="card-text">{{description}}</p>
-                        <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a>
-                    </div>
+<div class="container">
+    <div class="row">
+        {{#each skills as |skill|}}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card colorful-card">
+                <div class="card-image" style="background-color: {{backgroundColor}}">
+                    <img src="{{image_url}}" alt="Image for {{title}}">
+                </div>
+                <div class="card-content">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a>
+                    {{#if user.admin}}
+                    <a href="/edit/{{id}}" class="btn btn-secondary">Edit</a>
+                    <button class="btn btn-danger" onclick="deleteCard({{id}})">Delete</button>
+                    {{/if}}
                 </div>
             </div>
-            {{/each}}
         </div>
+        {{/each}}
     </div>
 </div>
-
