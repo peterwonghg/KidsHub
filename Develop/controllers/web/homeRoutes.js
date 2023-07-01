@@ -49,12 +49,12 @@ router.get('/profile', authenticate, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await Users.findByPk(req.session.user.id, {
-      include: [{ model: Skills, through: Skill_User, as: 'skills' }],
+      include: [{ model: Skills}],
     });
 
     const user = userData.get({ plain: true });
 
-
+    console.log(user);
 
     res.render('profile', {
       ...user,
@@ -66,13 +66,13 @@ router.get('/profile', authenticate, async (req, res) => {
   }
 });
 
-router.get('/update',authenticate, (req, res)=>{
+router.get('/skills/update',authenticate, (req, res)=>{
   res.render('update',
   {logged_in: req.session.logged_in,
   user: req.session.user});
 });
 
-router.get('/create',authenticate, (req, res)=>{
+router.get('/skills/create',authenticate, (req, res)=>{
   res.render('create',
   {logged_in: req.session.logged_in,
   user: req.session.user});
