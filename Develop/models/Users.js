@@ -42,6 +42,11 @@ User.init(
   },
   {
     hooks: {
+      beforeBulkCreate: async (newUsers) => {
+        for (let newUser of newUsers) {
+        newUser.password = await bcrypt.hash(newUser.password, 10);
+         }
+        },
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         newUserData.registration_date= new Date();  

@@ -34,7 +34,7 @@ router.get('/skills/:id', async (req, res) => {
     const skill = skillData.get({ plain: true });
     console.log(skill);
 
-    res.render('description-enrol', {
+    res.render('skillpage', {
       ...skill,
       logged_in: req.session.logged_in,
       user: req.session.user, 
@@ -57,11 +57,12 @@ router.get('/profile', authenticate, async (req, res) => {
     console.log(user);
 
     res.render('profile', {
-      ...user,
+      user,
       logged_in: req.session.logged_in,
       user: req.session.user, 
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
