@@ -1,27 +1,5 @@
-const enrollBtn =document.querySelector('.enroll');
 const deleteBtn = document.querySelector('.deleteBtn');
 const updateBtn = document.querySelector('.updateBtn');
-
-
-const enrollButtonHandler = async (e) => {
-    const skill_id = e.target.getAttribute('data-id');
-
-    const response = await fetch('/api/skills/enrolments',{
-        method: 'POST',
-        body: JSON.stringify({skill_id}),
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    });
-
-    if(response.ok) {
-        enrollBtn.style.backgroundColor= 'red';
-        enrollBtn.textContent= 'enrolled';
-        enrollBtn.removeEventListener('click', enrollButtonHandler);
-    }else{
-        document.location.replace('/login');
-    }
-}
 
 
 const handleDeleteBtn= async (e) => {
@@ -50,8 +28,5 @@ const handleUpdateBtn= async (e) => {
 }
 
 
-
-
 deleteBtn.addEventListener('click', handleDeleteBtn);
-enrollBtn.addEventListener('click', enrollButtonHandler);
 updateBtn.addEventListener('click', handleUpdateBtn)

@@ -36,13 +36,24 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    req.session.save(() => {
-      req.session.user = userData;
-      req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
-
+    if(userData.id===1){
+      req.session.save(() => {     
+        
+        req.session.isAdmin = true;
+        req.session.user= userData;
+        req.session.logged_in = true;
+        
+        res.json({ user: userData, message: 'You are logged in as Admin!' });
+      })
+    }else{
+      req.session.save(() => {     
+        
+        req.session.user = userData;
+        req.session.logged_in = true;
+        
+        res.json({ user: userData, message: 'You are now logged in!' });
+      });
+    }
   } catch (err) {
     res.status(400).json(err);
   }
