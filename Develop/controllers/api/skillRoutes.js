@@ -15,6 +15,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
+    console.log('hohoho')
     const newSkill = await Skills.create({
       ...req.body,
     });

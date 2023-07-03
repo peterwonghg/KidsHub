@@ -19,7 +19,7 @@ const enrollButtonHandler = async (e) => {
         enrollBtn.removeEventListener('click', enrollButtonHandler);
     }else{
         console.log('not ok');
-        // document.location.replace('/login');
+        document.location.replace('/login');
     }
 }
 

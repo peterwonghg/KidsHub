@@ -21,7 +21,7 @@ Skills.init(
     },
     image_url: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     start_date: {
       type: DataTypes.DATE,
