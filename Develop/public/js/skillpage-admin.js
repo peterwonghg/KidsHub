@@ -1,5 +1,5 @@
 const deleteBtn = document.querySelector('.deleteBtn');
-const updateBtn = document.querySelector('.updateBtn');
+const editBtn = document.querySelector('.editBtn');
 
 
 const handleDeleteBtn= async (e) => {
@@ -14,7 +14,7 @@ const handleDeleteBtn= async (e) => {
     });
 
     if(response.ok) {
-        location.reload();
+        document.location.replace('/');
     }else{
         alert('Failed to delete skill');
     }
@@ -29,4 +29,4 @@ const handleUpdateBtn= async (e) => {
 
 
 deleteBtn.addEventListener('click', handleDeleteBtn);
-updateBtn.addEventListener('click', handleUpdateBtn)
+editBtn.addEventListener('click', handleUpdateBtn)

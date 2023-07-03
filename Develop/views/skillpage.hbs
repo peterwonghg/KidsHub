@@ -7,8 +7,9 @@
 
       {{#if isAdmin}}
       <div>
-        <a href="/edit/{{id}}" class="btn btn-secondary">Edit</a>
-        <button class="btn btn-danger" onclick="deleteCard({{id}})">Delete</button>
+        <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
+        <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
+
       </div>
       {{/if}}
 

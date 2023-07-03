@@ -11,21 +11,23 @@
                     <p class="card-text">{{description}}</p>
                     <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a>
                     {{#if ../isAdmin}}
-                    <a href="/edit/{{id}}" class="btn btn-secondary">Edit</a>
+                    <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
                     <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
                     {{/if}}
                 </div>
-            </div>
+            </div> 
         </div>
-        {{/each}}
+        {{/each}} 
         
         {{#if isAdmin}}
-            <a href="/create" class="btn btn-secondary">Create</a>
+
+            <a href="/skills/create" class="btn btn-secondary">Create</a>
+
         {{/if}}
     </div>
 
+<div>
+<script src="/js/skill-homepage.js"></script>
 
 
-
-    <script src="/js/skill-homepage.js"></script>
 

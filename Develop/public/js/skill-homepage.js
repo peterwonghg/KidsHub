@@ -1,4 +1,9 @@
-const cardContainer = document.querySelector('.row');
+const editButtons = document.querySelectorAll('.colorful-card .editBtn');
+const deleteButtons = document.querySelectorAll('.colorful-card .deleteBtn');
+
+
+console.log('heya', editButtons)
+
 
 const deleteBtnHandler= async (e) => {
     if(e.target.classList.contains('deleteBtn')){
@@ -13,15 +18,16 @@ const deleteBtnHandler= async (e) => {
         });
     
         if(response.ok) {
-            location.reload();
+            document.location.replace('/');
         }else{
             alert('Failed to delete skill');
-        }
+        } 
     }
 }
 
 const updateBtnHandler= async (e) => {
-    if(e.target.classList.contains('updateBtn')){
+    console.log('nononono');
+    if(e.target.classList.contains('editBtn')){
         
         const skill_id = e.target.getAttribute('data-id');
         localStorage.setItem('skill_id', skill_id);
@@ -30,5 +36,9 @@ const updateBtnHandler= async (e) => {
     }
 }
 
-cardContainer.addEventListener('click', deleteBtnHandler);
-cardContainer.addEventListener('click', updateBtnHandler);
+editButtons.forEach((btn) => btn.addEventListener('click', updateBtnHandler));
+deleteButtons.forEach((btn) => btn.addEventListener('click', deleteBtnHandler));
+
+
+// cardContainer.addEventListener('click', deleteBtnHandler);
+// cardContainer.addEventListener('click', updateBtnHandler);
