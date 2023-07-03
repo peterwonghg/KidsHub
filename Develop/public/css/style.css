@@ -1,82 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    max-width: 1200px; 
-    margin: 0 auto; 
-  }
-  
-  
-  .colorful-card {
-    flex: 0 0 calc(33.33% - 40px);
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .card-image {
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 200px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  
-  .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .card-content {
-    padding: 20px;
-  }
-  
-  .card-title {
-    color: black;
-    font-size: 24px;
-  }
-  
-  .card-text {
-    margin-top: 10px;
-  }
-  
-  .card:hover {
-    background-color: lightgray;
-  }
-  
-  img {
-    opacity: 0.2;
-  }
-  
-  header {
-    background-color: #f8f9fa;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .header-title {
-    font-size: 80px;
-    margin-bottom: 0;
-  }
-  
-  .header-links a {
-    margin-right: 10px;
-  }
-  
-  footer {
-    background-color: #f8f9fa;
-    padding: 10px;
-    text-align: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.colorful-card {
+  flex: 0 0 calc(33.33% - 40px);
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-image {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  color: black;
+  font-size: 24px;
+}
+
+.card-text {
+  margin-top: 10px;
+}
+
+.card:hover {
+  background-color: lightgray;
+}
+
+img {
+  opacity: 0.2;
+}
+
+header {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+}
+
+.header-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 80px;
+  margin-bottom: 0;
+  display: inline-block;
+  background-image: linear-gradient(45deg, #ff9c00, #ffca2a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-links a {
+  margin-right: 10px;
+  color: #007bff;
+
+  text-decoration: none;
+
+}
+
+.logOut {
+  color: #dc3545;
+}
+
+.logIn {
+  color: #28a745;
+ 
+}
+
+.signUp {
+  color: #ffc107;
+ 
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+}

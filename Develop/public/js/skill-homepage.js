@@ -1,6 +1,5 @@
 const cardContainer = document.querySelector('.row');
 
-
 const deleteBtnHandler= async (e) => {
     if(e.target.classList.contains('deleteBtn')){
         console.log('haha');
@@ -30,7 +29,6 @@ const updateBtnHandler= async (e) => {
         
     }
 }
-
 
 cardContainer.addEventListener('click', deleteBtnHandler);
 cardContainer.addEventListener('click', updateBtnHandler);

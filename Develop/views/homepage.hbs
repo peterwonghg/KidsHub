@@ -18,10 +18,14 @@
             </div>
         </div>
         {{/each}}
+        
+        {{#if ../isAdmin}}
+            <a href="/create" class="btn btn-secondary">Create</a>
+        {{/if}}
     </div>
 
 
-<script src="/js/skill-homepage.js"></script>
 
 
+    <script src="/js/skill-homepage.js"></script>
 

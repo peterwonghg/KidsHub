@@ -4,6 +4,14 @@
       <h5 class="card-title">{{title}}</h5>
       <p class="card-text">{{description}}</p>
       <h6 class="card-subtitle mb-2 text-muted">$99.99</h6>
+
+      {{#if ../isAdmin}}
+      <div>
+        <a href="/edit/{{id}}" class="btn btn-secondary">Edit</a>
+        <button class="btn btn-danger" onclick="deleteCard({{id}})">Delete</button>
+      </div>
+      {{/if}}
+
       <div class="text-right">
         <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
       </div>
