@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
         req.session.user= userData;
         req.session.logged_in = true;
         
-        res.json({ user: userData, message: 'You are logged in as Admin!' });
+        res.json({ user: userData, isAdmin:req.session.isAdmin, message: 'You are logged in as Admin!' });
       })
     }else{
       req.session.save(() => {     

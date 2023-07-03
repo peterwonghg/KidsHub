@@ -7,11 +7,11 @@ require('dotenv').config();
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: true, // Set it to true if using a secure connection (SSL/TLS)
+    secure: false, // Set it to true if using a secure connection (SSL/TLS)
     auth: {
-      user: 'rsstydf@gmail.com',
-      pass: 3213213,
-    },
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
+    }, 
 });
 
 
@@ -23,31 +23,34 @@ router.post('/enrolments', async (req, res) =>{
           user_id: req.session.user.id,
           skill_id: req.body.skill_id,
         });
-        // const userData = await Users.findByPk(req.session.user.id);
-        // const userName = userData.userName;
-        // const userEmail = userData.email;
+        const userData = await Users.findByPk(req.session.user.id);
+        const user = userData.get({ plain: true });
+        const userName = user.name;
+        const userEmail = user.email;
 
-        // const skillData = await Skills.findByPk(req.body.skill_id);
-        // const skillTitle = skillData.title;
-        // const skillDescription = skillData.description;
-        // const skillStartDate = skillData.start_date;
-        // const skillEndDate = skillData.end_date;
+        const skillData = await Skills.findByPk(req.body.skill_id);
+        const skill = skillData.get({ plain: true });
+        const skillTitle = skill.title;
+        const skillDescription = skill.description;
+        const skillStartDate = skill.start_date;
+        const skillEndDate = skill.end_date;
+        console.log(user, skill);
         // console.log(newEnrolment, userData, userName, userEmail, skillData, skillTitle, skillDescription, skillStartDate, skillEndDate);
-        // const mailOptions = {
-        //     from: 'rsstydf@gmail.com',
-        //     to: userEmail,
-        //     subject: `You Have Enroled ${skillTitle} Skill`,
-        //     text: `Hi ${userName}, below is your enroled skill details: ${skillTitle} ${skillDescription}, the start date is ${skillStartDate} and end date is ${skillEndDate}.`,
-        //     html: '<h1>Welcome</h1>',
-        // };
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: userEmail,
+            subject: `You Have Enroled ${skillTitle} Skill`,
+            text: 'hello',
+            html: `<h1>Welcome</h1> <p> Hi ${userName}, below is your enroled skill details: ${skillTitle} ${skillDescription}, the start date is ${skillStartDate} and end date is ${skillEndDate}.</p>`,
+        };
 
-        // transporter.sendMail(mailOptions, (error, info) => {
-        //     if (error) {
-        //       console.log('Error:', error);
-        //     } else {
-        //       console.log('Email sent:', info.response);
-        //     }
-        // });
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+              console.log('Error:', error);
+            } else {
+              console.log('Email sent:', info.response);
+            }
+        });
           
           
 

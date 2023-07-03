@@ -1,27 +1,27 @@
 {{#*inline "profile"}}
 <div class="container">
-  <h1 class="mt-4">{{user.name}}</h1>
-  <p>Email: {{user.email}}</p>
+  <h1 class="mt-4">{{name}}</h1>
+  <p>Email: {{email}}</p>
 
-  <p>Registration Date: {{ user.registration_date}}</p>
+  <p>Registration Date: {{registration_date}}</p>
 
 
   <h2 class="mt-4">Enrolled Skills:</h2>
   <div class="row">
-    {{#each user.skills}}
+    {{#each skills as |skill|}}
     <div class="col-md-6">
       <div class="panel panel-default skill-panel">
         <div class="panel-body">
           <div class="row">
             <div class="col-sm-3">
-              <img src="{{this.image_url}}" alt="{{this.title}}" class="skill-image">
+              <img src="{{image_url}}" alt="{{title}}" class="skill-image">
             </div>
             <div class="col-sm-9">
-              <h3>{{this.title}}</h3>
-              <p>{{this.description}}</p>
-              <p>Difficulty Rating: {{this.difficulty_rating}}</p>
-              <p>Start Date: {{ this.start_date}}</p>
-              <p>End Date: {{ this.end_date}}</p>
+              <h3>{{title}}</h3>
+              <p>{{description}}</p>
+              <p>Difficulty Rating: {{difficulty_rating}}</p>
+              <p>Start Date: {{start_date}}</p>
+              <p>End Date: {{end_date}}</p>
             </div>
           </div>
         </div>

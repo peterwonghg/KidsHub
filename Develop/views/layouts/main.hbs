@@ -22,7 +22,11 @@
                 <div class="col">
                     <div class="text-right">
                         {{#if logged_in}}
+                        {{#if isAdmin}}
+                        <a href="/" class="mr-3 username">{{user.name}}</a>
+                        {{else}}
                         <a href="/profile" class="mr-3 username">{{user.name}}</a>
+                        {{/if}}
                         <span>|</span>
                         <a href="/logout" class="mr-3 logOut">Log Out</a>
                         {{else}}
@@ -30,6 +34,7 @@
                         <span>|</span>
                         <a href="/login" class="ml-3 signUp">Sign Up</a>
                         {{/if}}
+
                     </div>
                 </div>
             </div>

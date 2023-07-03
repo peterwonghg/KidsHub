@@ -12,17 +12,22 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+      
       if (response.ok) {
+        const data = await response.json();
+        if(data.isAdmin){
+            document.location.replace('/');
+        }else{
         // If successful, redirect the browser to the profile page
-        document.location.replace('/profile');
+        document.location.replace('/profile');}
+        
       } else {
         alert(response.statusText);
       }
     }
-  };
+};
   
-  const signupFormHandler = async (event) => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
   
     const name = document.querySelector('#name-signup').value.trim();
@@ -43,9 +48,9 @@ const loginFormHandler = async (event) => {
         alert(response.statusText);
       }
     }
-  };
+};
   
-  document
+document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
