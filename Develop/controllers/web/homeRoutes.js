@@ -11,10 +11,10 @@ router.get('/', async (req, res) => {
 
     console.log(req.session)
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      skills, 
+    res.render('homepage', {
+      skills,
       logged_in: req.session.logged_in,
-      user: req.session.user, 
+      user: req.session.user,
       isAdmin: req.session.isAdmin,
     });
   } catch (err) {
@@ -22,23 +22,29 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/skills/create',authenticate, (req, res)=>{
+router.get('/skills/create', authenticate, (req, res) => {
   try {
-    
-  res.render('create',
-  {logged_in: req.session.logged_in,
-  user: req.session.user});
+
+    res.render('create',
+      {
+        logged_in: req.session.logged_in,
+        user: req.session.user,
+        isAdmin: req.session.isAdmin,
+
+      });
   } catch (error) {
     console.log(err);
     res.status(500).json(err);
-};
+  };
 })
 
-router.get('/skills/update',authenticate, (req, res)=>{
+router.get('/skills/update', authenticate, (req, res) => {
   res.render('update',
-  {logged_in: req.session.logged_in,
-  user: req.session.user});
-}); 
+    {
+      logged_in: req.session.logged_in,
+      user: req.session.user
+    });
+});
 
 router.get('/skills/:id', async (req, res) => {
   try {
@@ -57,8 +63,8 @@ router.get('/skills/:id', async (req, res) => {
     res.render('skillpage', {
       ...skill,
       logged_in: req.session.logged_in,
-      user: req.session.user, 
-      isAdmin:req.session.isAdmin,
+      user: req.session.user,
+      isAdmin: req.session.isAdmin,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -70,7 +76,7 @@ router.get('/profile', authenticate, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await Users.findByPk(req.session.user.id, {
-      include: [{ model: Skills}],
+      include: [{ model: Skills }],
     });
 
     const user = userData.get({ plain: true });
@@ -80,7 +86,7 @@ router.get('/profile', authenticate, async (req, res) => {
     res.render('profile', {
       ...user,
       logged_in: req.session.logged_in,
-      user: req.session.user, 
+      user: req.session.user,
     });
   } catch (err) {
     console.log(err);

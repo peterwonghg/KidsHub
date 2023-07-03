@@ -1,4 +1,5 @@
 const newFormHandler = async (event) => {
+    console.log('haha');
     event.preventDefault();
   
     const title = document.querySelector('.skill-title').value.trim();

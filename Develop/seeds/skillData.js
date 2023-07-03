@@ -17,7 +17,7 @@ const data = [
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Basic",
-    background_color: '#FF0000',
+    background_color: '#Fh8600',
   },
   {
     title: "Subtraction",
@@ -26,7 +26,7 @@ const data = [
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Basic",
-    background_color: '#FF0000',
+    background_color: '#Fa1650',
   },
   {
     title: "Skill 4",
@@ -35,7 +35,7 @@ const data = [
     start_date: "2023-06-15 09:00:00",
     end_date: "2023-06-30 17:00:00",
     difficulty_rating: "Advanced",
-    background_color: '#FF0000',
+    background_color: '#bF1025',
   }
 ];
 
