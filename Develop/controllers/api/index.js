@@ -5,6 +5,6 @@ const enrolmentRoutes= require('./enrolments');
 
 router.use('/users', userRoutes);
 router.use('/skills', skillRoutes);
-router.use('/skills/enrolments', enrolmentRoutes)
+router.use('/skills', enrolmentRoutes)
 
 module.exports = router;

@@ -9,11 +9,13 @@ router.get('/', async (req, res) => {
     const skills = skillData.map((skill) => skill.get({ plain: true }));
 
 
+    console.log(req.session)
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       skills, 
       logged_in: req.session.logged_in,
       user: req.session.user, 
+      isAdmin: req.session.isAdmin,
     });
   } catch (err) {
     res.status(500).json(err);

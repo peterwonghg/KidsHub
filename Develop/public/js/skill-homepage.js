@@ -1,9 +1,9 @@
-const cardContainer = document.querySelector('.card-container');
+const cardContainer = document.querySelector('.row');
 
 
 const deleteBtnHandler= async (e) => {
     if(e.target.classList.contains('deleteBtn')){
-        
+        console.log('haha');
         const skill_id = e.target.getAttribute('data-id');
     
         const response= await fetch(`/api/skills/${skill_id}`,{
