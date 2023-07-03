@@ -22,6 +22,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/skills/create',authenticate, (req, res)=>{
+  try {
+    
+  res.render('create',
+  {logged_in: req.session.logged_in,
+  user: req.session.user});
+  } catch (error) {
+    console.log(err);
+    res.status(500).json(err);
+};
+})
+
+router.get('/skills/update',authenticate, (req, res)=>{
+  res.render('update',
+  {logged_in: req.session.logged_in,
+  user: req.session.user});
+}); 
+
 router.get('/skills/:id', async (req, res) => {
   try {
     const skillData = await Skills.findByPk(req.params.id, {
@@ -40,6 +58,7 @@ router.get('/skills/:id', async (req, res) => {
       ...skill,
       logged_in: req.session.logged_in,
       user: req.session.user, 
+      isAdmin:req.session.isAdmin,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -69,17 +88,6 @@ router.get('/profile', authenticate, async (req, res) => {
   }
 });
 
-router.get('/skills/update',authenticate, (req, res)=>{
-  res.render('update',
-  {logged_in: req.session.logged_in,
-  user: req.session.user});
-});
-
-router.get('/skills/create',authenticate, (req, res)=>{
-  res.render('create',
-  {logged_in: req.session.logged_in,
-  user: req.session.user});
-});
 
 
 router.get('/login', (req, res) => {
