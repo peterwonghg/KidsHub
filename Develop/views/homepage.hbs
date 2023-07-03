@@ -10,16 +10,22 @@
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
                     <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a>
-                    {{#if user.admin}}
+                    {{#if ../isAdmin}}
                     <a href="/edit/{{id}}" class="btn btn-secondary">Edit</a>
-                    <button class="btn btn-danger" onclick="deleteCard({{id}})">Delete</button>
+                    <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
                     {{/if}}
                 </div>
             </div>
         </div>
         {{/each}}
+        
+        {{#if ../isAdmin}}
+            <a href="/create" class="btn btn-secondary">Create</a>
+        {{/if}}
     </div>
 
 
-<script src="/js/skill-homepage.js"></script>
+
+
+    <script src="/js/skill-homepage.js"></script>
 

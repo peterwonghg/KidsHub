@@ -9,9 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const hbs = exphbs.create({
   extname: 'hbs',
-  helpers: {
-    sessionUser: function () {
-      return req.session.user;}}
+
 });
 
 const app = express();
@@ -39,5 +37,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening on localhost:' + PORT));
 });
