@@ -13,9 +13,16 @@
       </div>
       {{/if}}
 
+      {{#if isEnrolled}}
+      <div class="text-right">
+        <button class="btn btn-primary isEnrolled" data-id="{{id}}">Enrolled</button>
+      </div>
+      {{else}}
       <div class="text-right">
         <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
       </div>
+      {{/if}}
+
     </div>
   </div>
 </div>
