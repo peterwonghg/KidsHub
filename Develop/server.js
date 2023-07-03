@@ -9,9 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const hbs = exphbs.create({
   extname: 'hbs',
-  helpers: {
-    sessionUser: function () {
-      return req.session.user;}}
+
 });
 
 const app = express();

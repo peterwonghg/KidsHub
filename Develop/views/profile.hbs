@@ -2,7 +2,9 @@
 <div class="container">
   <h1 class="mt-4">{{user.name}}</h1>
   <p>Email: {{user.email}}</p>
-  <p>Registration Date: {{user.registration_date}}</p>
+
+  <p>Registration Date: {{ user.registration_date}}</p>
+
 
   <h2 class="mt-4">Enrolled Skills:</h2>
   <div class="row">
@@ -18,8 +20,8 @@
               <h3>{{this.title}}</h3>
               <p>{{this.description}}</p>
               <p>Difficulty Rating: {{this.difficulty_rating}}</p>
-              <p>Start Date: {{this.start_date}}</p>
-              <p>End Date: {{this.end_date}}</p>
+              <p>Start Date: {{ this.start_date}}</p>
+              <p>End Date: {{ this.end_date}}</p>
             </div>
           </div>
         </div>

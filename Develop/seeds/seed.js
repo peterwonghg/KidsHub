@@ -1,8 +1,8 @@
+const sequelize = require('../config/connection');
 const seedUsers = require('../seeds/userData');
 const seedSkills = require('../seeds/skillData');
 const seedSkill_Users = require('../seeds/skill_userData');
 
-const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
