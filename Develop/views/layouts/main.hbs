@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsHub</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-  
+
+<body style="background-color: #00539C">
+
+    <header style="background-color: #00539C">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="/" class="header-title" id="header-title">KidsHub</a>
+                </div>
+                <div class="col">
+                    <div class="text-right" style="tex">
+                        {{#if logged_in}}
+                        {{#if isAdmin}}
+                        <a href="/" class="mr-3 username"><strong>{{user.name}}</strong></a>
+                        {{else}}
+                        <a href="/profile" class="mr-3 username"><strong>{{user.name}}</strong></a>
+                        {{/if}}
+                        <a href="/logout" class="mr-3 logOut"><strong>Log Out</strong></a>
+                        {{else}}
+                        <a href="/login" class="mr-3 logIn"><strong>Log In</strong></a>
+                        <a href="/login" class="ml-3 signUp"><strong>Sign Up</strong></a>
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
 
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
+    <main>
+        {{{ body }}}
+    </main>
 
-      {{#if logged_in }}
-        <li><a href="/api/users/logout">Logout</a></li>
-      {{else}}
-        <li><a href="/login">Login</a></li>
-      {{/if }}
-    </ul>
-  </nav>
+    <footer style="background-color: #00539C">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="https://github.com/your-username">GitHub</a>
+                </div>
+                <div class="col">
+                    <div class="text-right">
+                        Created by Brenden | Harianto | Paichien
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-
-  <main>
-    {{{ body }}}
-  </main>
-
-
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
+
 </html>

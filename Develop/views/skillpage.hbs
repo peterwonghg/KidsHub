@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{description}}</p>
+      <h6 class="card-subtitle mb-2 text-muted">${{price}}</h6>
+
+      {{#if isAdmin}}
+      <div>
+        <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
+        <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
+
+      </div>
+      {{/if}}
+      
+      {{#unless isAdmin}}
+      {{#if isEnrolled}}
+      <div class="text-right">
+        <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
+      </div>
+      {{else}}
+       <div class="text-right">
+        <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
+      </div>
+      {{/if}}
+      {{/unless}}
+
+    </div>
+  </div>
+</div>
+{{#if isAdmin}}
+<script src="/js/skillpage-admin.js"></script>
+{{else}}
+<script src="/js/skillpage-users.js"></script>
+{{/if}}
