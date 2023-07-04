@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', async () => {
     const titleInput = document.querySelector('.skill-title');
     const descriptionInput = document.querySelector('.skill-description');
@@ -29,18 +30,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const updateFormHandler = async (event) => {
         event.preventDefault();
-        console.log(description);
+        // console.log(start_dateInput.value.trim());
+        console.log(new Date());
         const skill_id = localStorage.getItem('skill_id');
         const response = await fetch(`/api/skills/${skill_id}`, {
             method: 'PUT',
             body: JSON.stringify({
-                title:titleInput.value,
-                description:descriptionInput.value,
-                image_url:image_urlInput.value,
-                start_date:start_dateInput.value,
-                end_date:end_dateInput.value,
-                difficulty_rating:difficulty_ratingInput.value,
-                background_color:background_colorInput.value
+                title:titleInput.value.trim(),
+                description:descriptionInput.value.trim(),
+                image_url:image_urlInput.value.trim(),
+                start_date:start_dateInput.value.trim(),
+                end_date:end_dateInput.value.trim(),
+                difficulty_rating:difficulty_ratingInput.value.trim(),
+                background_color:background_colorInput.value.trim()
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (response.ok) {
-            // document.location.replace('/');
+            document.location.replace('/');
         } else {
             alert('Failed to create project');
         }
