@@ -41,7 +41,14 @@ router.post('/enrollments', async (req, res) => {
             to: userEmail,
             subject: `You Have Enroled ${skillTitle} Skill`,
             text: 'hello',
-            html: `<h1>Welcome</h1> <p> Hi ${userName}, below is your enroled skill details: ${skillTitle} ${skillDescription}, the start date is ${skillStartDate} and end date is ${skillEndDate}.</p>`,
+            html: `<h1>Welcome</h1> 
+            <p> Hi ${userName},<p><br> 
+            <p>Congratulations, you are now enrolled to the following skill: ${skillTitle}<p><br>
+            <p>${skillTitle} will take you on a journey to ${skillDescription}<p><br>
+            <p>The start date is on ${skillStartDate}<p><br>
+            <p>and the end date is ${skillEndDate}.</p><br><br>
+            <p>Your friends at,<p><br>
+            <p>KidsHub Team<p>`,
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
