@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const end_dateInput = document.querySelector('.skill-end_date');
     const difficulty_ratingInput = document.querySelector('.difficulty_rating');
     const background_colorInput = document.querySelector('.background_color');
+    const priceInput = document.querySelector('.skill-price');
   
     const skill_id = localStorage.getItem('skill_id');
     console.log(skill_id);
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const data = await response.json();
       titleInput.value = data.title;
       descriptionInput.value = data.description;
+      priceInput.value = data.price;
       image_urlInput.value = data.image_url;
       start_dateInput.value = data.start_date;
       end_dateInput.value = data.end_date;
