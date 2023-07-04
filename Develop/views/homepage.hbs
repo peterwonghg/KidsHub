@@ -12,8 +12,10 @@
                     <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a>
 
                     {{#if ../isAdmin}}
-                    <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
-                    <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
+                    <div class="admin-btn">
+                        <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
+                        <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
+                    </div>
                     {{/if}}
                 </div>
             </div>
@@ -21,7 +23,9 @@
         {{/each}}
 
         {{#if isAdmin}}
+        <div class="">
         <a href="/skills/create" class="btn btn-secondary">Create</a>
+        </div>
         {{/if}}
     </div>
 </div>
