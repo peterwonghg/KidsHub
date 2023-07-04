@@ -47,7 +47,7 @@ router.post('/enrollments', async (req, res) => {
             <p>${skillTitle} will take you on a journey to ${skillDescription}<p><br>
             <p>The start date is on ${skillStartDate}<p><br>
             <p>and the end date is on ${skillEndDate}.</p><br><br>
-            <p>Your friends at,<p><br>
+            <p>Your friends at,<p><br><br>
             <p>KidsHub Team<p>`,
         };
 
