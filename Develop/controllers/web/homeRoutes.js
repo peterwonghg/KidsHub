@@ -46,26 +46,43 @@ router.get('/skills/update', authenticate, (req, res) => {
     });
 });
 
+
 router.get('/skills/:id', async (req, res) => {
   try {
     const skillData = await Skills.findByPk(req.params.id, {
       include: [
         {
           model: Users,
-          attributes: ['name'],
         },
       ],
     });
 
     const skill = skillData.get({ plain: true });
-    console.log(skill);
+    // console.log(skill);
+    const allUsers_id = skill.users.map(user => user.id);
+    const user_id = req.session.user.id;
+    if (allUsers_id.includes(user_id)) {
+      req.session.save(() => {
 
-    res.render('skillpage', {
-      ...skill,
-      logged_in: req.session.logged_in,
-      user: req.session.user,
-      isAdmin: req.session.isAdmin,
-    });
+        req.session.isEnrolled = true;
+        res.render(
+          'skillpage', {
+          ...skill,
+          logged_in: req.session.logged_in,
+          user: req.session.user,
+          isAdmin: req.session.isAdmin,
+          isEnrolled: req.session.isEnrolled,
+        }
+        )
+      })
+    } else {
+      res.render('skillpage', {
+        ...skill,
+        logged_in: req.session.logged_in,
+        user: req.session.user,
+        isAdmin: req.session.isAdmin,
+      });
+    }
   } catch (err) {
     res.status(500).json(err);
   }
