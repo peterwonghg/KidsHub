@@ -7,7 +7,7 @@ body {
 }
 
 .bg-cards {
-  background-color: #EEA47F;
+  background-color: #ffffff;
 }
 
 .card-container {
@@ -136,3 +136,6 @@ footer {
   padding-top: 10px;
 }
 
+.card-image {
+  opacity: 0.1 ;
+}
