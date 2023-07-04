@@ -1,34 +1,45 @@
 {{#*inline "profile"}}
 <div class="container">
-  <h1 class="mt-4">{{name}}</h1>
-  <p>Email: {{email}}</p>
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-3 ">
+      <div class="profile-panel bg-cards">
+        <h1 class="profile-title">{{name}}</h1>
+        <hr>
+        <p>Email: {{email}}</p>
+        <p>Registration Date: {{registration_date}}</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <p>Registration Date: {{registration_date}}</p>
-
-
-  <h2 class="mt-4">Enrolled Skills:</h2>
-  <div class="row">
-    {{#each skills as |skill|}}
-    <div class="col-md-6">
-      <div class="panel panel-default skill-panel">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-3">
-              <img src="{{image_url}}" alt="{{title}}" class="skill-image">
-            </div>
-            <div class="col-sm-9">
-              <h3>{{title}}</h3>
-              <p>{{description}}</p>
-              <p>${{price}}</p>
-              <p>Difficulty Rating: {{difficulty_rating}}</p>
-              <p>Start Date: {{start_date}}</p>
-              <p>End Date: {{end_date}}</p>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h2 class="mt-4">Enrolled Skills</h2>
+      <div class="row">
+        {{#each skills as |skill|}}
+        <div class="col-md-6">
+          <div class="skill-panel bg-cards">
+            <div class="skill-panel-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="{{image_url}}" alt="{{title}}" class="skill-image">
+                </div>
+                <div class="col-sm-9">
+                  <h3>{{title}}</h3>
+                  <p>{{description}}</p>
+                  <p>${{price}}</p>
+                  <p>Difficulty: {{difficulty_rating}}</p>
+                  <p>Start Date: {{start_date}}</p>
+                  <p>End Date: {{end_date}}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        {{/each}}
       </div>
     </div>
-    {{/each}}
   </div>
 </div>
 {{/inline}}

@@ -6,6 +6,10 @@ body {
   width: 100%;
 }
 
+.bg-cards {
+  background-color: #EEA47F;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -52,14 +56,6 @@ body {
   margin-top: 10px;
 }
 
-.card:hover {
-  background-color: lightgray;
-}
-
-img {
-  opacity: 0.4;
-}
-
 header {
   background-color: #f8f9fa;
   padding: 10px;
@@ -104,3 +100,35 @@ footer {
   padding: 10px;
   text-align: center;
 }
+
+.profile-panel {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.profile-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.skill-panel {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.skill-panel-body {
+  padding-top: 0;
+}
+
+.skill-image {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
