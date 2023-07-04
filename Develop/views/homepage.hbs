@@ -11,8 +11,10 @@
                     <p class="card-text">{{description}}</p>
                     <button class="btn btn-primary detailsBtn" data-id="{{id}}">See More Details</button>
                     {{#if ../isAdmin}}
-                    <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
-                    <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
+                    <div class="admin-btn">
+                        <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
+                        <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
+                    </div>
                     {{/if}}
                 </div>
             </div>
@@ -20,7 +22,9 @@
         {{/each}}
 
         {{#if isAdmin}}
+        <div class="">
         <a href="/skills/create" class="btn btn-secondary">Create</a>
+        </div>
         {{/if}}
     </div>
 </div>
