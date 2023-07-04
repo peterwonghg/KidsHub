@@ -2,32 +2,27 @@
     <div class="row">
         {{#each skills as |skill|}}
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card colorful-card">
-                <div class="card-image" style="background-color:{{background_color}}">
+            <div class="card colorful-card bg-cards">
+                <div class="card-image" style="background-color:white">
                     <img src="{{image_url}}" alt="Image for {{title}}">
                 </div>
                 <div class="card-content">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
                     <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a>
+
                     {{#if ../isAdmin}}
                     <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
                     <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
                     {{/if}}
                 </div>
-            </div> 
+            </div>
         </div>
-        {{/each}} 
-        
+        {{/each}}
+
         {{#if isAdmin}}
-
-            <a href="/skills/create" class="btn btn-secondary">Create</a>
-
+        <a href="/skills/create" class="btn btn-secondary">Create</a>
         {{/if}}
     </div>
-
-<div>
+</div>
 <script src="/js/skill-homepage.js"></script>
-
-
-
