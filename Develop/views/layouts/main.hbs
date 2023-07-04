@@ -11,28 +11,26 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body style="background-color: #00539C">
 
-    <header class="bg-light">
+    <header style="background-color: #00539C">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <a href="/" class="header-title" id="header-title">KidsHub</a>
                 </div>
                 <div class="col">
-                    <div class="text-right">
+                    <div class="text-right" style="tex">
                         {{#if logged_in}}
                         {{#if isAdmin}}
-                        <a href="/" class="mr-3 username">{{user.name}}</a>
+                        <a href="/" class="mr-3 username"><strong>{{user.name}}</strong></a>
                         {{else}}
-                        <a href="/profile" class="mr-3 username">{{user.name}}</a>
+                        <a href="/profile" class="mr-3 username"><strong>{{user.name}}</strong></a>
                         {{/if}}
-                        <span>|</span>
-                        <a href="/logout" class="mr-3 logOut">Log Out</a>
+                        <a href="/logout" class="mr-3 logOut"><strong>Log Out</strong></a>
                         {{else}}
-                        <a href="/login" class="mr-3 logIn">Log In</a>
-                        <span>|</span>
-                        <a href="/login" class="ml-3 signUp">Sign Up</a>
+                        <a href="/login" class="mr-3 logIn"><strong>Log In</strong></a>
+                        <a href="/login" class="ml-3 signUp"><strong>Sign Up</strong></a>
                         {{/if}}
 
                     </div>
@@ -46,7 +44,7 @@
         {{{ body }}}
     </main>
 
-    <footer class="bg-light">
+    <footer style="background-color: #00539C">
         <div class="container">
             <div class="row">
                 <div class="col">
