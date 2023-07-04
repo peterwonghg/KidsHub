@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (response.ok) {
-            // document.location.replace('/');
+            document.location.replace('/');
         } else {
             alert('Failed to create project');
         }
