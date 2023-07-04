@@ -9,11 +9,12 @@ const newFormHandler = async (event) => {
     const end_date = document.querySelector('.skill-end_date').value.trim();
     const difficulty_rating = document.querySelector('.difficulty_rating').value.trim();
     const background_color = document.querySelector('.background_color').value.trim();
+    const price = document.querySelector('.skill-price').value.trim();
   
-    if (title && description && start_date && end_date && difficulty_rating && background_color) {
+    if (title && description && price && start_date && end_date && difficulty_rating && background_color) {
       const response = await fetch(`/api/skills`, {
         method: 'POST',
-        body: JSON.stringify({ title, description, image_url, start_date, end_date, difficulty_rating, background_color}),
+        body: JSON.stringify({ title, description, price, image_url, start_date, end_date, difficulty_rating, background_color}),
         headers: {
           'Content-Type': 'application/json',
         },
