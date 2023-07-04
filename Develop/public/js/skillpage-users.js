@@ -21,29 +21,6 @@ const enrollButtonHandler = async (e) => {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const skill_id = localStorage.getItem('skill_id');
-    const response = await fetch(`/api/skills/${skill_id}`,{
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    });
-
-    if(response.ok){
-        const data= await response.json();
-        console.log(data)
-        const user_id=data.user_id;
-        const allUsers_id = data.skill.users.map(user => user.id);
-        if (allUsers_id.includes(user_id)){
-            enrollBtn.style.backgroundColor = 'grey';
-            enrollBtn.textContent= 'enrolled';
-        }else{};
-    }
-
-
-});
- 
 
 
 

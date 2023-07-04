@@ -15,6 +15,7 @@ router.get('/:id', async (req, res) => {
 
     res.status(200).json({skill, user_id: req.session.user.id})
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -28,6 +29,7 @@ router.post('/', async (req, res) => {
 
     res.status(200).json(newSkill);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
