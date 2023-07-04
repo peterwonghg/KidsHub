@@ -6,10 +6,6 @@ body {
   width: 100%;
 }
 
-.bg-cards {
-  background-color: #ffffff;
-}
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +137,4 @@ footer {
   padding-top: 10px;
 }
 
-.card-image {
-  opacity: 0.1 ;
-}
+
