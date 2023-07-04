@@ -1,10 +1,10 @@
 const enrollBtn =document.querySelector('.enroll');
-
+const isEnrolledBtn = document.querySelector('.isEnrolled');
 
 const enrollButtonHandler = async (e) => {
     const skill_id = e.target.getAttribute('data-id');
     
-    const response = await fetch('/api/skills/enrolments',{
+    const response = await fetch('/api/skills/enrollments',{
         method: 'POST',
         body: JSON.stringify({skill_id}),
         headers: {
@@ -13,16 +13,13 @@ const enrollButtonHandler = async (e) => {
     });
 
     if(response.ok) {
-        console.log('its ok');
-        enrollBtn.style.backgroundColor= 'red';
+        enrollBtn.style.backgroundColor= 'grey';
         enrollBtn.textContent= 'enrolled';
-        enrollBtn.removeEventListener('click', enrollButtonHandler);
     }else{
         console.log('not ok');
-        // document.location.replace('/login');
+        document.location.replace('/login');
     }
 }
-
 
 
 

@@ -1,26 +1,35 @@
 const router = require('express').Router();
-const { Skills } = require('../../models');
+const { Skills, Users } = require('../../models');
 
 router.get('/:id', async (req, res) => {
   try {
-    const skillData = await Skills.findByPk(req.params.id);
+    const skillData = await Skills.findByPk(req.params.id, {
+      include: [
+        {
+          model: Users,
+        },
+      ],
+    });
 
     const skill = skillData.get({ plain: true });
 
-    res.status(200).json(skill)
+    res.status(200).json({skill, user_id: req.session.user.id})
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
 router.post('/', async (req, res) => {
   try {
+    console.log('hohoho')
     const newSkill = await Skills.create({
       ...req.body,
     });
 
     res.status(200).json(newSkill);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });

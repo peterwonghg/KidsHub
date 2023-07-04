@@ -37,13 +37,13 @@ Skill_User.init(
     },
     {
         hooks: {
-            // beforeBulkCreate: async (skillUsers) => {
-            //     skillUsers.forEach((skillUser) => {
-            //         // console.log('heya', dayjs().format('DD/MM/YYYY'))
-            //         console.log(skillUser)
-            //         skillUser.enrolment_date = dayjs().format('DD/MM/YYYY')
-            //     })
-            // },
+            beforeBulkCreate: async (skillUsers) => {
+                skillUsers.forEach((skillUser) => {
+                    // console.log('heya', dayjs().format('DD/MM/YYYY'))
+                    console.log(skillUser)
+                    skillUser.enrolment_date = dayjs().format('DD/MM/YYYY')
+                })
+            },
             beforeValidate: async (skillUser) => {
                 skillUser.enrolment_date = dayjs().format('DD/MM/YYYY')
             }

@@ -21,6 +21,10 @@ Skills.init(
     },
     image_url: {
       type: DataTypes.STRING,
+      allowNull: true,
+    },
+    price: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     start_date: {
