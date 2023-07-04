@@ -23,6 +23,10 @@ Skills.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    price: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     start_date: {
       type: DataTypes.DATE,
       allowNull: false,

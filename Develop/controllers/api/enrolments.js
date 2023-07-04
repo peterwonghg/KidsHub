@@ -9,19 +9,19 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // Set it to true if using a secure connection (SSL/TLS)
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD,
-    }, 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
+    },
 });
 
 
 
-router.post('/enrolments', async (req, res) =>{
+router.post('/enrollments', async (req, res) => {
     try {
         console.log('hello');
-        const newEnrolment = await Skill_User.create({
-          user_id: req.session.user.id,
-          skill_id: req.body.skill_id,
+        const newEnrollment = await Skill_User.create({
+            user_id: req.session.user.id,
+            skill_id: req.body.skill_id,
         });
         const userData = await Users.findByPk(req.session.user.id);
         const user = userData.get({ plain: true });
@@ -35,7 +35,7 @@ router.post('/enrolments', async (req, res) =>{
         const skillStartDate = skill.start_date;
         const skillEndDate = skill.end_date;
         console.log(user, skill);
-        // console.log(newEnrolment, userData, userName, userEmail, skillData, skillTitle, skillDescription, skillStartDate, skillEndDate);
+        // console.log(newEnrollment, userData, userName, userEmail, skillData, skillTitle, skillDescription, skillStartDate, skillEndDate);
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: userEmail,
@@ -46,19 +46,30 @@ router.post('/enrolments', async (req, res) =>{
 
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-              console.log('Error:', error);
+                console.log('Error:', error);
             } else {
-              console.log('Email sent:', info.response);
+                console.log('Email sent:', info.response);
             }
         });
-          
-          
 
-        res.status(200).json(newEnrolment);
-      } catch (err) {
+        res.status(200).json(newEnrollment);
+
+    } catch (err) {
         console.log(err);
         res.status(400).json(err);
-      }
-  })
+    }
+});
+
+router.get('/enrollments', async (req, res) => {
+    try {
+      const skillData = await Skills.findByPk(req.params.id,);
+  
+      const skill = skillData.get({ plain: true });
+  
+      res.status(200).json(skill)
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 module.exports = router;

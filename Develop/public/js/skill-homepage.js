@@ -1,5 +1,6 @@
 const editButtons = document.querySelectorAll('.colorful-card .editBtn');
 const deleteButtons = document.querySelectorAll('.colorful-card .deleteBtn');
+const detailsBtn = document.querySelectorAll('.colorful-card .detailsBtn');
 
 
 console.log('heya', editButtons)
@@ -26,7 +27,6 @@ const deleteBtnHandler= async (e) => {
 }
 
 const updateBtnHandler= async (e) => {
-    console.log('nononono');
     if(e.target.classList.contains('editBtn')){
         
         const skill_id = e.target.getAttribute('data-id');
@@ -36,8 +36,20 @@ const updateBtnHandler= async (e) => {
     }
 }
 
+const detailsBtnHandler= async (e) => {
+    if(e.target.classList.contains('detailsBtn')){
+        
+        const skill_id = e.target.getAttribute('data-id');
+        localStorage.setItem('skill_id', skill_id);
+        document.location.replace(`/skills/${skill_id}`);
+        
+    }
+}
+
 editButtons.forEach((btn) => btn.addEventListener('click', updateBtnHandler));
 deleteButtons.forEach((btn) => btn.addEventListener('click', deleteBtnHandler));
+detailsBtn.forEach((btn) => btn.addEventListener('click', detailsBtnHandler));
+
 
 
 // cardContainer.addEventListener('click', deleteBtnHandler);

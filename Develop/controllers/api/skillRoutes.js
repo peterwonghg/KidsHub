@@ -1,13 +1,19 @@
 const router = require('express').Router();
-const { Skills } = require('../../models');
+const { Skills, Users } = require('../../models');
 
 router.get('/:id', async (req, res) => {
   try {
-    const skillData = await Skills.findByPk(req.params.id);
+    const skillData = await Skills.findByPk(req.params.id, {
+      include: [
+        {
+          model: Users,
+        },
+      ],
+    });
 
     const skill = skillData.get({ plain: true });
 
-    res.status(200).json(skill)
+    res.status(200).json({skill, user_id: req.session.user.id})
   } catch (err) {
     res.status(500).json(err);
   }

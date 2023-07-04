@@ -3,7 +3,7 @@
     <div class="card-body">
       <h5 class="card-title">{{title}}</h5>
       <p class="card-text">{{description}}</p>
-      <h6 class="card-subtitle mb-2 text-muted">$99.99</h6>
+      <h6 class="card-subtitle mb-2 text-muted">${{price}}</h6>
 
       {{#if isAdmin}}
       <div>
@@ -12,16 +12,12 @@
 
       </div>
       {{/if}}
-
-      {{#if isEnrolled}}
-      <div class="text-right">
-        <button class="btn btn-primary isEnrolled" data-id="{{id}}">Enrolled</button>
-      </div>
-      {{else}}
-      <div class="text-right">
+      
+      {{#unless isAdmin}}
+       <div class="text-right">
         <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
       </div>
-      {{/if}}
+      {{/unless}}
 
     </div>
   </div>
