@@ -42,7 +42,8 @@ router.get('/skills/update', authenticate, (req, res) => {
   res.render('update',
     {
       logged_in: req.session.logged_in,
-      user: req.session.user
+      user: req.session.user,
+      isAdmin: req.session.isAdmin,
     });
 });
 
