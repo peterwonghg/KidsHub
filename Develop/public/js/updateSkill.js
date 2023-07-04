@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', async () => {
     const titleInput = document.querySelector('.skill-title');
     const descriptionInput = document.querySelector('.skill-description');
@@ -29,7 +30,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const updateFormHandler = async (event) => {
         event.preventDefault();
-        console.log(descriptionInput.value.trim());
+        // console.log(start_dateInput.value.trim());
+        console.log(new Date());
         const skill_id = localStorage.getItem('skill_id');
         const response = await fetch(`/api/skills/${skill_id}`, {
             method: 'PUT',

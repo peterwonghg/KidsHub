@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const dayjs = require('dayjs');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -49,7 +50,7 @@ User.init(
       },
       beforeValidate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        newUserData.registration_date = new Date();
+        newUserData.registration_date = dayjs().format('DD/MM/YYYY');
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
