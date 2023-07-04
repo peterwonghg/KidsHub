@@ -101,6 +101,11 @@ footer {
   text-align: center;
 }
 
+
+.enrolled{
+    background-color: grey;
+}
+
 .profile-panel {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -135,4 +140,5 @@ footer {
 .admin-btn {
   padding-top: 10px;
 }
+
 
