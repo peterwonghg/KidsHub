@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Skill_User, Users, Skills } = require('../../models');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-
+const dayjs = require('dayjs');
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -32,8 +32,9 @@ router.post('/enrollments', async (req, res) => {
         const skill = skillData.get({ plain: true });
         const skillTitle = skill.title;
         const skillDescription = skill.description;
-        const skillStartDate = skill.start_date;
-        const skillEndDate = skill.end_date;
+        const skillSubtitle = skill.subtitle;
+        const skillStartDate = dayjs(skill.start_date).format('DD/MM/YYYY');
+        const skillEndDate = dayjs(skill.end_date).format('DD/MM/YYYY');
         const skillPrice = skill.price;
         const skillPlace = skill.place;
         const skillContact= skill.contact;
@@ -46,13 +47,13 @@ router.post('/enrollments', async (req, res) => {
             text: 'hello',
             html: `<h1>Welcome</h1> 
             <p> Hi ${userName},<p><br> 
-            <p>Congratulations, you are now enrolled to the following skill: ${skillTitle}<p><br>
-            <p>${skillTitle} will take you on a journey to ${skillDescription}<p><br>
-            <p>The start date is on ${skillStartDate}<p><br>
-            <p>and the end date is on ${skillEndDate}.</p><br><br>
-            <p>The fee is $${skillPrice}, you may pay when you're here.</p><br><br>
-            <p>Contact: ${skillContact}</p><br><br>
-            <p>Place: ${skillPlace}</p><br><br>
+            <p>Congratulations, you are now enrolled to the following skill:<strong> ${skillTitle}</strong></p><br>
+            <p><strong>${skillTitle}</strong> will take you to <strong>${skillSubtitle}</strong><p><br>
+            <p>The start date is on <strong>${skillStartDate}</strong><p><br>
+            <p>and the end date is on <strong>${skillEndDate}</strong>.</p><br><br>
+            <p>The fee is <strong>$${skillPrice}</strong>, you may pay when you're here.</p><br><br>
+            <p>Contact: <strong>${skillContact}</strong></p><br><br>
+            <p>Place: <strong>${skillPlace}</strong></p><br><br>
             <p>Your friends at,<p><br><br>
             <p>KidsHub Team<p>`,
         };
