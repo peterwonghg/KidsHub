@@ -4,12 +4,20 @@ const sequelize = require('./config/connection');
 const session = require('express-session');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
+const dayjs = require('dayjs');
+
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const hbs = exphbs.create({
   extname: 'hbs',
-
+  helpers: {
+    formatRegistrationDate(date){
+      // console.log({format})
+      // console.log('abbccc', dayjs(date, "YYYY-MM-DD").format(format))
+      return dayjs(date, "YYYY-MM-DD").format('DD/MM/YYYY');
+    }
+  }
 });
 
 const app = express();
