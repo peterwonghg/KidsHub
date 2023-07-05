@@ -19,7 +19,7 @@
       <div class="row">
         {{#each skills as |skill|}}
         <div class="col-md-6">
-          <div class="skill-panel bg-cards">
+          <div class="skill-panel bg-cards"style="background-color:{{background_color}}">
             <div class="skill-panel-body">
               <div class="row">
                 <div class="col-sm-3">
@@ -32,6 +32,8 @@
                   <p>Difficulty: {{difficulty_rating}}</p>
                   <p>Start Date: {{formatRegistrationDate start_date}} 9:00 - 17:00</p>
                   <p>End Date: {{formatRegistrationDate end_date}} 9:00 - 17:00</p>
+                  <p>Contact: {{contact}}</p>
+                  <p>Place: {{place}}</p>
                 </div>
               </div>
             </div>

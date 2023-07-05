@@ -3,7 +3,12 @@
     <div class="card-body"style="background-color:{{background_color}}">
       <h5 class="card-title">{{title}}</h5>
       <p class="card-text">{{description}}</p>
-      <h6 class="card-subtitle mb-2 text-muted">${{price}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Price: ${{price}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Difficulty: {{difficulty_rating}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Start Date: {{start_date}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">End Date: {{end_date}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Contact: {{contact}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Place: {{place}}</h6>
 
       {{#if isAdmin}}
       <div>
@@ -20,7 +25,7 @@
       </div>
       {{else}}
        <div class="text-right">
-        <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
+        <button class="btn btn-primary enroll" data-id="{{id}}">Login to Enroll</button>
       </div>
       {{/if}}
       {{/unless}}

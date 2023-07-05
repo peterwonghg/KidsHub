@@ -34,6 +34,9 @@ router.post('/enrollments', async (req, res) => {
         const skillDescription = skill.description;
         const skillStartDate = skill.start_date;
         const skillEndDate = skill.end_date;
+        const skillPrice = skill.price;
+        const skillPlace = skill.place;
+        const skillContact= skill.contact;
         console.log(user, skill);
         // console.log(newEnrollment, userData, userName, userEmail, skillData, skillTitle, skillDescription, skillStartDate, skillEndDate);
         const mailOptions = {
@@ -47,6 +50,9 @@ router.post('/enrollments', async (req, res) => {
             <p>${skillTitle} will take you on a journey to ${skillDescription}<p><br>
             <p>The start date is on ${skillStartDate}<p><br>
             <p>and the end date is on ${skillEndDate}.</p><br><br>
+            <p>The fee is $${skillPrice}, you may pay when you're here.</p><br><br>
+            <p>Contact: ${skillContact}</p><br><br>
+            <p>Place: ${skillPlace}</p><br><br>
             <p>Your friends at,<p><br><br>
             <p>KidsHub Team<p>`,
         };

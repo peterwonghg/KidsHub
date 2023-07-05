@@ -31,6 +31,14 @@ Skills.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    place: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    contact: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     start_date: {
       type: DataTypes.DATE,
       allowNull: false,
