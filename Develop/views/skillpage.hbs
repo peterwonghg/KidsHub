@@ -19,12 +19,18 @@
       {{/if}}
       
       {{#unless isAdmin}}
+      {{#if logged_in}}
       {{#if isEnrolled}}
       <div class="text-right">
         <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
       </div>
       {{else}}
        <div class="text-right">
+        <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
+      </div>
+      {{/if}}
+      {{else}}
+      <div class="text-right">
         <button class="btn btn-primary enroll" data-id="{{id}}">Login to Enroll</button>
       </div>
       {{/if}}
