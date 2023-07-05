@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-content">
                     <h5 class="card-title">{{title}}</h5>
-                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">{{subtitle}}</p>
                     <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a>
 
                     {{#if ../isAdmin}}
@@ -21,12 +21,16 @@
             </div>
         </div>
         {{/each}}
-
-        {{#if isAdmin}}
-        <div class="">
-        <a href="/skills/create" class="btn btn-secondary">Create</a>
-        </div>
-        {{/if}}
     </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            {{#if isAdmin}}
+            <div>
+                <a href="/skills/create" class="btn btn-secondary">Create</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+
 </div>
 <script src="/js/skill-homepage.js"></script>
