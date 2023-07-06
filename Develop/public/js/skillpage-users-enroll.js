@@ -4,7 +4,7 @@ const isEnrolledBtn = document.querySelector('.isEnrolled');
 const enrollButtonHandler = async (e) => {
     const skill_id = e.target.getAttribute('data-id');
     
-    const response = await fetch('/api/skills/enrollments',{
+    const enrollResponse = await fetch('/api/skills/enrollments',{
         method: 'POST',
         body: JSON.stringify({skill_id}),
         headers: {
@@ -12,14 +12,17 @@ const enrollButtonHandler = async (e) => {
         }
     });
 
-    if(response.ok) {
+    if(enrollResponse.ok) {
         enrollBtn.style.backgroundColor= 'grey';
         enrollBtn.textContent= 'enrolled';
+        document.location.replace(`/skills/${skill_id}`);
     }else{
         console.log('not ok');
         document.location.replace('/login');
     }
 }
+
+
 
 
 

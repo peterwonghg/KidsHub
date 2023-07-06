@@ -21,6 +21,38 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    age: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    hobby: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_food: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_sport: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_animal: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_subject: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    hidden_talent: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -50,7 +82,7 @@ User.init(
       },
       beforeValidate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        newUserData.registration_date = dayjs().format('DD/MM/YYYY');
+        newUserData.registration_date = dayjs();
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {

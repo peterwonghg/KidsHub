@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
+<body style="background-color: #ffffff">
 <body style="background-color: #4d4afd">
 
+    <header style="background-color: #ffffff">
     <header style="background-color: #2a27ff">
         <div class="container">
             <div class="row">
@@ -23,9 +25,9 @@
                     <div class="text-right" style="tex">
                         {{#if logged_in}}
                         {{#if isAdmin}}
-                        <a href="/" class="mr-3 username"><strong>{{user.name}}</strong></a>
+                        <a href="/" class="mr-3 username"><strong>Hi {{user.name}}</strong></a>
                         {{else}}
-                        <a href="/profile" class="mr-3 username"><strong>{{user.name}}</strong></a>
+                        <a href="/profile" class="mr-3 username"><strong>Hi {{user.name}}</strong></a>
                         {{/if}}
                         <a href="/logout" class="mr-3 logOut"><strong>Log Out</strong></a>
                         {{else}}
@@ -44,6 +46,7 @@
         {{{ body }}}
     </main>
 
+    <footer style="background-color: #ffffff">
     <footer style="background-color: #2a27ff">
         <div class="container">
             <div class="row justify-content-center">
