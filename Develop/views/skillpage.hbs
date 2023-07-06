@@ -1,8 +1,10 @@
 <div class="container">
   <div class="card">
     <div class="card-body" style="background-color:{{background_color}}">
-      <h5 class="card-title">{{title}}</h5>
-      <p class="card-text">{{description}}</p>
+      <h5 class="card-title"
+        style="font-size: 24px; font-weight: bold; text-align: center; color: #333; text-transform: uppercase; margin-bottom: 20px;">
+        {{title}}</h5>
+      <p class="card-text">   {{description}}</p>
       <h6 class="card-subtitle mb-2 text-muted">Price: ${{price}}</h6>
       <h6 class="card-subtitle mb-2 text-muted">Difficulty: {{difficulty_rating}}</h6>
       <h6 class="card-subtitle mb-2 text-muted">Start Date: {{formatRegistrationDate start_date}}</h6>
@@ -19,16 +21,16 @@
 
       {{#unless isAdmin}}
       {{#if logged_in}}
-        {{#if isEnrolled}}
-        <div class="text-right">
-          <button class="btn btn-danger unenroll" data-id="{{id}}">Unenroll</button>
-          <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
-        </div>
-        {{else}}
-        <div class="text-right">
-          <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
-        </div>
-        {{/if}}
+      {{#if isEnrolled}}
+      <div class="text-right">
+        <button class="btn btn-danger unenroll" data-id="{{id}}">Unenroll</button>
+        <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
+      </div>
+      {{else}}
+      <div class="text-right">
+        <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
+      </div>
+      {{/if}}
       {{else}}
       <div class="text-right">
         <button class="btn btn-primary enroll" data-id="{{id}}">Login to Enroll</button>
@@ -40,7 +42,9 @@
 </div>
 {{#if isEnrolled}}
 <div class="container mt-4">
-  <h5 class="card-title">Meet Your Super Squad!</h5>
+  <h5 class="card-title"
+    style="font-size: 24px; font-weight: bold; text-align: center; color: #333; text-transform: uppercase; margin-bottom: 20px;">
+    Meet Your Super Squad!</h5>
   <div class="row">
     {{#each users as |user|}}
     <div class="col-lg-4 col-md-6 mb-4">
@@ -55,15 +59,22 @@
           {{/if}}
         </div>
         <div class="card-content">
-          <h5 class="card-title">{{name}}</h5>
-          <p class="card-text"><strong>Age:</strong>{{age}} </p>
-          <p class="card-text"><strong>Favorite Subject:</strong> {{favorite_subject}}</p>
-          <p class="card-text"><strong>Hobby:</strong> {{hobby}}</p>
-          <a href="/users/{{id}}" class="btn btn-primary">See More Details</a>
+          <h5 class="card-title" style="font-weight: bold; text-transform: uppercase; margin: 0; padding: 10px 0;">
+            {{name}}</h5>
+          <div class="card-text" style="line-height: 1.2;">
+            <p style="margin: 5px 0;"><strong>Age:</strong> <span style="font-weight: bold;">{{age}}</span></p>
+            <p style="margin: 5px 0;"><strong>Favorite Subject:</strong> <span
+                style="font-style: italic;">{{favorite_subject}}</span></p>
+            <p style="margin: 5px 0;"><strong>Hobby:</strong> {{hobby}}</p>
+          </div>
+          <a href="/users/{{id}}" class="btn btn-primary" style="margin-top: 10px;">See More Details</a>
         </div>
       </div>
     </div>
     {{/each}}
+
+
+
   </div>
 </div>
 {{/if}}
