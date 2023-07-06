@@ -1,5 +1,4 @@
 const unEnrollBtn = document.querySelector('.unenroll');
-
 const enrollBtn =document.querySelector('.enroll');
 const isEnrolledBtn = document.querySelector('.isEnrolled');
 
@@ -40,6 +39,10 @@ const unEnrollBtnHandler = async (e) => {
     }
 
 }
+
+
+
+
 
 unEnrollBtn.addEventListener('click', unEnrollBtnHandler);
 enrollBtn.addEventListener('click', enrollButtonHandler);

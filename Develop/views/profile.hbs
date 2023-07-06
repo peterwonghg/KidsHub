@@ -1,12 +1,22 @@
 {{#*inline "profile"}}
 <div class="container">
   <div class="row mt-4">
-    <div class="col-md-6 offset-md-3 ">
+    <div class="col-md-6 offset-md-3">
       <div class="profile-panel bg-cards">
         <h1 class="profile-title">{{name}}</h1>
         <hr>
-        <p>Email: {{email}}</p>
-        <p>Registration Date: {{formatRegistrationDate registration_date}}</p>
+        <ul>
+          <li><strong>Email:</strong> {{email}}</li>
+          <li><strong>Age:</strong> {{age}}</li>
+          <li><strong>Gender:</strong> {{gender}}</li>
+          <li><strong>Hobby:</strong> {{hobby}}</li>
+          <li><strong>Favorite Food:</strong> {{favorite_food}}</li>
+          <li><strong>Favorite Sport:</strong> {{favorite_sport}}</li>
+          <li><strong>Favorite Subject:</strong> {{favorite_subject}}</li>
+          <li><strong>Favorite Animal:</strong> {{favorite_animal}}</li>
+          <li><strong>Hidden Talent:</strong> {{hidden_talent}}</li>
+          <li><strong>Registration Date:</strong> {{formatRegistrationDate registration_date}}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -19,7 +29,7 @@
       <div class="row">
         {{#each skills as |skill|}}
         <div class="col-md-6">
-          <div class="skill-panel bg-cards"style="background-color:{{background_color}}">
+          <div class="skill-panel bg-cards" style="background-color:{{background_color}}">
             <div class="skill-panel-body">
               <div class="row">
                 <div class="col-sm-3">
@@ -27,13 +37,13 @@
                 </div>
                 <div class="col-sm-9">
                   <h3>{{title}}</h3>
-                  <p>{{description}}</p>
-                  <p>${{price}}</p>
-                  <p>Difficulty: {{difficulty_rating}}</p>
-                  <p>Start Date: {{formatRegistrationDate start_date}} 9:00 - 17:00</p>
-                  <p>End Date: {{formatRegistrationDate end_date}} 9:00 - 17:00</p>
-                  <p>Contact: {{contact}}</p>
-                  <p>Place: {{place}}</p>
+                  <p><strong>{{subtitle}}</strong></p>
+                  <p><strong>Price:</strong> ${{price}}</p>
+                  <p><strong>Difficulty:</strong> {{difficulty_rating}}</p>
+                  <p><strong>Start Date:</strong> {{formatRegistrationDate start_date}} 9:00 - 17:00</p>
+                  <p><strong>End Date:</strong> {{formatRegistrationDate end_date}} 9:00 - 17:00</p>
+                  <p><strong>Contact:</strong> {{contact}}</p>
+                  <p><strong>Place:</strong> {{place}}</p>
                 </div>
               </div>
             </div>
