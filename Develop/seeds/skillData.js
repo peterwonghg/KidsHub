@@ -5,7 +5,7 @@ const data = [
     title: "Wonder Explorers: Unveiling the Secrets of the World!",
     subtitle: "Embark on an Exciting Journey of Discovery!",
     description: "Calling all young adventurers! Join the Wonder Explorers and set out on an extraordinary journey to uncover the secrets of the world around us. From the mysteries of space to the wonders of nature, each lesson will immerse you in a different topic. Dive deep into the ocean, unravel ancient civilizations, explore the vastness of the universe, and encounter fascinating creatures. Through interactive games, captivating stories, and hands-on experiments, you'll develop a deep understanding of diverse subjects and cultivate a lifelong love for learning. Expand your horizons and become a true Wonder Explorer. Enroll now and let the adventure begin!",
-    image_url: "/images/secrets.jpg",
+    image_url: "/images/explore.jpg",
     price: "99.99",
     place:'123 Wellingtoon St, Perth WA 6000',
     contact: '(08)12345678',
