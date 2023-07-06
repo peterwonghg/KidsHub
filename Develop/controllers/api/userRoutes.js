@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const userData = await Users.findOne({ where: { email: req.body.email } });
-    
+
     if (!userData) {
       res
         .status(400)
@@ -47,37 +47,16 @@ router.post('/login', async (req, res) => {
         res.json({ user: userData, isAdmin: req.session.isAdmin, message: 'You are logged in as Admin!' });
       })
     } else {
-      console.log(userData.gender);
-      if (userData.gender === 'boy') {
-        req.session.save(() => {
+      req.session.save(() => {
 
-          req.session.user = userData;
-          req.session.logged_in = true;
-          req.session.isBoy = true;
+        req.session.user = userData;
+        req.session.logged_in = true;
 
-          res.json({ user: userData, message: 'You are now logged in!' });
-        });
-      } else if(userData.gender === 'girl'){
-        req.session.save(() => {
-
-          req.session.user = userData;
-          req.session.logged_in = true;
-          req.session.isGirl = true;
-
-          res.json({ user: userData, message: 'You are now logged in!' });
-        });
-      } else{
-        req.session.save(() => {
-
-          req.session.user = userData;
-          req.session.logged_in = true;
-          req.session.isUnisex = true;
-
-          res.json({ user: userData, message: 'You are now logged in!' });
-        });
-      }
-
+        res.json({ user: userData, message: 'You are now logged in!' });
+      });
     }
+
+
   } catch (err) {
     res.status(400).json(err);
   }

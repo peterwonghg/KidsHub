@@ -19,16 +19,16 @@
 
       {{#unless isAdmin}}
       {{#if logged_in}}
-      {{#if isEnrolled}}
-      <div class="text-right">
-        <button class="btn btn-danger unenroll" data-id="{{id}}">Unenroll</button>
-        <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
-      </div>
-      {{else}}
-      <div class="text-right">
-        <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
-      </div>
-      {{/if}}
+        {{#if isEnrolled}}
+        <div class="text-right">
+          <button class="btn btn-danger unenroll" data-id="{{id}}">Unenroll</button>
+          <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
+        </div>
+        {{else}}
+        <div class="text-right">
+          <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
+        </div>
+        {{/if}}
       {{else}}
       <div class="text-right">
         <button class="btn btn-primary enroll" data-id="{{id}}">Login to Enroll</button>
@@ -46,14 +46,12 @@
     <div class="col-lg-4 col-md-6 mb-4">
       <div class="card colorful-card bg-cards" style="background-color:{{background_color}}">
         <div class="card-image" style="background-color:white">
-          {{#if ../isBoy}}
-          <img src="/images/boy.jpg" alt="Image for {{gender}}">
-          {{else}}
-          {{#if ../isGirl}}
+          {{#if (isBoy gender)}}
+          <img src="/images/boy.png" alt="Image for {{gender}}">
+          {{else if (isGirl gender)}}
           <img src="/images/girl.png" alt="Image for {{gender}}">
           {{else}}
           <img src="/images/unisex.jpg" alt="Image for Unisex">
-          {{/if}}
           {{/if}}
         </div>
         <div class="card-content">
