@@ -70,7 +70,7 @@ const data = [
     title: "Creative Writing Wizards: Unleash Your Imagination!",
     subtitle: "Embark on a Magical Journey into the World of Creative Writing!",
     description: "Calling all aspiring writers! Join the Creative Writing Wizards and embark on a magical journey into the realm of storytelling and imagination. Explore the art of crafting captivating characters, creating vivid settings, and weaving spellbinding plots. Through engaging writing prompts, interactive exercises, and constructive feedback, you'll unleash your creativity and develop your unique writing voice. Dive into different genres, from fantasy to mystery, and learn essential writing techniques that will bring your stories to life. Whether you dream of becoming a novelist or simply want to express yourself through writing, this course will empower you to become a true Creative Writing Wizard!",
-    image_url: "/images/story.jpg",
+    image_url: "/images/writing.jpg",
     price: "99.99",
     place:'123 Wellingtoon St, Perth WA 6000',
     contact: '(08)12345678',
