@@ -59,7 +59,7 @@ router.get('/skills/:id', async (req, res) => {
     });
 
     const skill = skillData.get({ plain: true });
-    // console.log(skill);
+    console.log(skill);
     const allUsers_id = skill.users.map(user => user.id);
     const user_id = req.session.user ? req.session.user.id : null;
     if (allUsers_id.includes(user_id)) {
@@ -73,6 +73,9 @@ router.get('/skills/:id', async (req, res) => {
           user: req.session.user,
           isAdmin: req.session.isAdmin,
           isEnrolled: req.session.isEnrolled,
+          isBoy: req.session.isBoy,
+          isGirl: req.session.isGirl,
+          isUnisex: req.session.isUnisex,
         }
         )
       })
@@ -83,6 +86,7 @@ router.get('/skills/:id', async (req, res) => {
         logged_in: req.session.logged_in,
         user: req.session.user,
         isAdmin: req.session.isAdmin,
+        
       });
 
     }

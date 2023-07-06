@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container">
   <div class="card">
     <div class="card-body" style="background-color:{{background_color}}">
       <h5 class="card-title">{{title}}</h5>
@@ -16,16 +16,16 @@
         <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
       </div>
       {{/if}}
-      
+
       {{#unless isAdmin}}
       {{#if logged_in}}
-      {{#if isEnrolled}} 
+      {{#if isEnrolled}}
       <div class="text-right">
         <button class="btn btn-danger unenroll" data-id="{{id}}">Unenroll</button>
         <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
       </div>
       {{else}}
-       <div class="text-right">
+      <div class="text-right">
         <button class="btn btn-primary enroll" data-id="{{id}}">Enroll</button>
       </div>
       {{/if}}
@@ -38,7 +38,37 @@
     </div>
   </div>
 </div>
-
+{{#if isEnrolled}}
+<div class="container mt-4">
+  <h5 class="card-title">Meet Your Super Squad!</h5>
+  <div class="row">
+    {{#each users as |user|}}
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card colorful-card bg-cards" style="background-color:{{background_color}}">
+        <div class="card-image" style="background-color:white">
+          {{#if ../isBoy}}
+          <img src="/images/boy.jpg" alt="Image for {{gender}}">
+          {{else}}
+          {{#if ../isGirl}}
+          <img src="/images/girl.png" alt="Image for {{gender}}">
+          {{else}}
+          <img src="/images/unisex.jpg" alt="Image for Unisex">
+          {{/if}}
+          {{/if}}
+        </div>
+        <div class="card-content">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text"><strong>Age:</strong>{{age}} </p>
+          <p class="card-text"><strong>Favorite Subject:</strong> {{favorite_subject}}</p>
+          <p class="card-text"><strong>Hobby:</strong> {{hobby}}</p>
+          <a href="/users/{{id}}" class="btn btn-primary">See More Details</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+{{/if}}
 
 {{#if isAdmin}}
 <script src="/js/skillpage-admin.js"></script>
