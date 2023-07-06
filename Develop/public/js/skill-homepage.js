@@ -3,7 +3,6 @@ const deleteButtons = document.querySelectorAll('.colorful-card .deleteBtn');
 const detailsBtn = document.querySelectorAll('.colorful-card .detailsBtn');
 
 
-console.log('heya', editButtons)
 
 
 const deleteBtnHandler= async (e) => {

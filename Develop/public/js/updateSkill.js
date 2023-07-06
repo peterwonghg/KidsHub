@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const response = await fetch(`/api/skills/${skill_id}`);
     if (response.ok) {
-        console.log('haha');
         const data = await response.json();
+        console.log(data);
         titleInput.value = data.skill.title;
         subtitleInput.value = data.skill.subtitle;
         descriptionInput.value = data.skill.description;

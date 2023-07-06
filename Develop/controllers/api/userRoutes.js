@@ -3,7 +3,7 @@ const { Users } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const userData = await Users.create({...req.body});
+    const userData = await Users.create({ ...req.body });
 
     req.session.save(() => {
       req.session.user = userData;
@@ -37,24 +37,26 @@ router.post('/login', async (req, res) => {
       return;
     }
     // console.log(userData, 'heyy', userData.id);
-    if(userData.id===1){
-      req.session.save(() => {     
-        
+    if (userData.id === 1) {
+      req.session.save(() => {
+
         req.session.isAdmin = true;
-        req.session.user= userData;
-        req.session.logged_in = true;
-        
-        res.json({ user: userData, isAdmin:req.session.isAdmin, message: 'You are logged in as Admin!' });
-      })
-    }else{
-      req.session.save(() => {     
-        
         req.session.user = userData;
         req.session.logged_in = true;
-        
+
+        res.json({ user: userData, isAdmin: req.session.isAdmin, message: 'You are logged in as Admin!' });
+      })
+    } else {
+      req.session.save(() => {
+
+        req.session.user = userData;
+        req.session.logged_in = true;
+
         res.json({ user: userData, message: 'You are now logged in!' });
       });
     }
+
+
   } catch (err) {
     res.status(400).json(err);
   }

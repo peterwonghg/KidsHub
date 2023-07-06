@@ -16,7 +16,14 @@ const hbs = exphbs.create({
       // console.log({format})
       // console.log('abbccc', dayjs(date, "YYYY-MM-DD").format(format))
       return dayjs(date, "YYYY-MM-DD").format('DD/MM/YYYY');
-    }
+    },
+    isBoy(gender){
+      return gender === 'boy'
+    },
+    isGirl(gender){
+      return gender === 'girl'
+    },
+   
   }
 });
 
