@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="card">
-    <div class="card-body"style="background-color:{{background_color}}">
+    <div class="card-body" style="background-color:{{background_color}}">
       <h5 class="card-title">{{title}}</h5>
       <p class="card-text">{{description}}</p>
       <h6 class="card-subtitle mb-2 text-muted">Price: ${{price}}</h6>
@@ -14,14 +14,14 @@
       <div>
         <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
         <button class="btn btn-danger deleteBtn" data-id="{{id}}">Delete</button>
-
       </div>
       {{/if}}
       
       {{#unless isAdmin}}
       {{#if logged_in}}
-      {{#if isEnrolled}}
+      {{#if isEnrolled}} 
       <div class="text-right">
+        <button class="btn btn-danger unenroll" data-id="{{id}}">Unenroll</button>
         <button class="btn btn-primary enroll enrolled" data-id="{{id}}">Enrolled</button>
       </div>
       {{else}}
@@ -35,12 +35,17 @@
       </div>
       {{/if}}
       {{/unless}}
-
     </div>
   </div>
 </div>
+
+
 {{#if isAdmin}}
 <script src="/js/skillpage-admin.js"></script>
 {{else}}
-<script src="/js/skillpage-users.js"></script>
+{{#if isEnrolled}}
+<script src="/js/skillpage-users-unenroll.js"></script>
+{{else}}
+<script src="/js/skillpage-users-enroll.js"></script>
+{{/if}}
 {{/if}}

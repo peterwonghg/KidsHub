@@ -12,7 +12,7 @@ router.get('/:id', async (req, res) => {
     });
 
     const skill = skillData.get({ plain: true });
-
+    // console.log(skill);
     res.status(200).json({skill, user_id: req.session.user.id})
   } catch (err) {
     console.log(err);

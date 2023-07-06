@@ -37,7 +37,7 @@ router.post('/enrollments', async (req, res) => {
         const skillEndDate = dayjs(skill.end_date).format('DD/MM/YYYY');
         const skillPrice = skill.price;
         const skillPlace = skill.place;
-        const skillContact= skill.contact;
+        const skillContact = skill.contact;
         console.log(user, skill);
         // console.log(newEnrollment, userData, userName, userEmail, skillData, skillTitle, skillDescription, skillStartDate, skillEndDate);
         const mailOptions = {
@@ -46,7 +46,7 @@ router.post('/enrollments', async (req, res) => {
             subject: `You Have Enroled ${skillTitle} Skill`,
             text: 'hello',
             html: `<h1>Welcome</h1> 
-            <p> Hi ${userName},<p><br> 
+            <p> Hi <strong>${userName}</strong>,<p><br> 
             <p>Congratulations, you are now enrolled to the following skill:<strong> ${skillTitle}</strong></p><br>
             <p><strong>${skillTitle}</strong> will take you to <strong>${skillSubtitle}</strong><p><br>
             <p>The start date is on <strong>${skillStartDate}</strong><p><br>
@@ -76,14 +76,47 @@ router.post('/enrollments', async (req, res) => {
 
 router.get('/enrollments', async (req, res) => {
     try {
-      const skillData = await Skills.findByPk(req.params.id,);
-  
-      const skill = skillData.get({ plain: true });
-  
-      res.status(200).json(skill)
+        const skill_userData = await Skill_User.findOne({
+            where: {
+                user_id: user_id,
+                skill_id: skill_id,
+            },
+        });
+
+        const skill = skillData.get({ plain: true });
+
+        res.status(200).json(skill)
     } catch (err) {
-      res.status(500).json(err);
+        res.status(500).json(err);
     }
-  });
+});
+
+router.delete('/enrollments/:skill_id', async (req, res) => {
+    try {
+        console.log(req.params.skill_id, req.session.user.id);
+        const skill_userData = await Skill_User.findOne({
+            where: {
+                skill_id: req.params.skill_id,
+                user_id: req.session.user.id,
+            },
+        });
+
+        if (skill_userData) {
+            const deleteData = await Skill_User.destroy({
+                where: {
+                    id: skill_userData.id,
+                },
+            });
+            res.status(200).json(deleteData);
+        } else {
+
+            res.status(404).json({ message: 'No enrollment found with this id!' });
+            return;
+        }
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
