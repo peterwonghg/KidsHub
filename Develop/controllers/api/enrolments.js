@@ -1,18 +1,10 @@
 const router = require('express').Router();
 const { Skill_User, Users, Skills } = require('../../models');
-const nodemailer = require('nodemailer');
 require('dotenv').config();
 const dayjs = require('dayjs');
+const transporter= require('../../config/mailerConnection');
 
-const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false, // Set it to true if using a secure connection (SSL/TLS)
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-    },
-});
+
 
 
 
@@ -38,8 +30,7 @@ router.post('/enrollments', async (req, res) => {
         const skillPrice = skill.price;
         const skillPlace = skill.place;
         const skillContact = skill.contact;
-        console.log(user, skill);
-        // console.log(newEnrollment, userData, userName, userEmail, skillData, skillTitle, skillDescription, skillStartDate, skillEndDate);
+    
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: userEmail,

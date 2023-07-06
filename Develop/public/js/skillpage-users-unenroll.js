@@ -1,6 +1,10 @@
 const unEnrollBtn = document.querySelector('.unenroll');
-const enrollBtn =document.querySelector('.enroll');
-const isEnrolledBtn = document.querySelector('.isEnrolled');
+const enrollBtn = document.querySelector('.enroll');
+const detailsBtns = document.querySelectorAll('.colorful-card .detailsBtn');
+
+// Rest of the code...
+
+
 
 const enrollButtonHandler = async (e) => {
     const skill_id = e.target.getAttribute('data-id');
@@ -40,9 +44,20 @@ const unEnrollBtnHandler = async (e) => {
 
 }
 
-
+const detailsBtnHandler= async (e) => {
+    if(e.target.classList.contains('detailsBtn')){
+        
+        const skill_id = e.target.getAttribute('data-skillId');
+        const user_id = e.target.getAttribute('data-userId');
+        localStorage.setItem('skill_id_highfive', skill_id);
+        localStorage.setItem('user_id_highfive', user_id);
+        document.location.replace(`/users/${user_id}`);
+        
+    }
+}
 
 
 
 unEnrollBtn.addEventListener('click', unEnrollBtnHandler);
 enrollBtn.addEventListener('click', enrollButtonHandler);
+detailsBtns.forEach((btn) => btn.addEventListener('click', detailsBtnHandler));

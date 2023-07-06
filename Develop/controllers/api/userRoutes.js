@@ -1,5 +1,8 @@
 const router = require('express').Router();
-const { Users } = require('../../models');
+const { Users, Skills } = require('../../models');
+const transporter= require('../../config/mailerConnection');
+require('dotenv').config();
+
 
 router.post('/', async (req, res) => {
   try {
@@ -11,6 +14,42 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(userData);
     });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+router.post('/highfive', async (req, res) => {
+  try {
+    const userData = await Users.findByPk(req.body.user_id);
+    const userName = userData.name;
+    const userEmail = userData.email;
+    const senderData = await Users.findByPk(req.session.user.id);
+    const senderName = senderData.name;
+    const skillData = await Skills.findByPk(req.body.skill_id);
+    const skillName = skillData.title;
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: userEmail,
+      subject: `${senderName} Has Sent You a High Five!`,
+      text: 'hello',
+      html: `
+      <p> Hi <strong>${userName}</strong>,<p><br> 
+      <p>your classmate <strong>${senderName}</strong> from <strong>${skillName}</strong> has just sent you a high five!!</p><br>
+      <p>Your friends at,<p><br><br>
+      <p>KidsHub Team<p>`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          console.log('Error:', error);
+      } else {
+          console.log('Email sent:', info.response);
+      }
+  });
+    res.status(200).json(userData);
+   
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
