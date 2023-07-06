@@ -1,5 +1,4 @@
 const enrollBtn =document.querySelector('.enroll');
-const isEnrolledBtn = document.querySelector('.isEnrolled');
 
 const enrollButtonHandler = async (e) => {
     const skill_id = e.target.getAttribute('data-id');

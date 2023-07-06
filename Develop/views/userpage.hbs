@@ -1,0 +1,63 @@
+{{#*inline "profile"}}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="profile-panel bg-cards">
+                <h1 class="profile-title">{{name}}</h1>
+                <hr>
+                <ul>
+                    <li><strong>Hobby:</strong> {{hobby}}</li>
+                    <li><strong>Favorite Food:</strong> {{favorite_food}}</li>
+                    <li><strong>Favorite Sport:</strong> {{favorite_sport}}</li>
+                    <li><strong>Favorite Subject:</strong> {{favorite_subject}}</li>
+                    <li><strong>Favorite Animal:</strong> {{favorite_animal}}</li>
+                    <li><strong>Hidden Talent:</strong> {{hidden_talent}}</li>
+                    <li><strong>Registration Date:</strong> {{formatRegistrationDate registration_date}}</li>
+                </ul>
+                <div class="text-right">
+                    <button class="btn btn-primary highFive" data-id="{{id}}">Send a High Five!</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 class="mt-4 text-center">Enrolled Skills</h2>
+            <div class="row">
+                {{#each skills as |skill|}}
+                <div class="col-md-6">
+                    <div class="skill-panel bg-cards" style="background-color:{{background_color}}">
+                        <div class="skill-panel-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="{{image_url}}" alt="{{title}}" class="skill-image">
+                                </div>
+                                <div class="col-sm-9">
+                                    <h3 class="skill-title">{{title}}</h3>
+                                    <p class="skill-subtitle"><strong>{{subtitle}}</strong></p>
+                                    <p class="skill-price"><strong>Price:</strong> ${{price}}</p>
+                                    <p class="skill-difficulty"><strong>Difficulty:</strong> {{difficulty_rating}}</p>
+                                    <p class="skill-date"><strong>Start Date:</strong> {{formatRegistrationDate
+                                        start_date}} 9:00 - 17:00</p>
+                                    <p class="skill-date"><strong>End Date:</strong> {{formatRegistrationDate end_date}}
+                                        9:00 - 17:00</p>
+                                    <p class="skill-contact"><strong>Contact:</strong> {{contact}}</p>
+                                    <p class="skill-place"><strong>Place:</strong> {{place}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/userpage-enroll.js"></script>
+{{/inline}}
+{{>profile}}

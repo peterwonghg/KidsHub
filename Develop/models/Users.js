@@ -23,7 +23,7 @@ User.init(
     },
     age: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     gender: {
       type: DataTypes.STRING,
@@ -31,7 +31,7 @@ User.init(
     },
     hobby: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     favorite_food: {
       type: DataTypes.STRING,
@@ -47,7 +47,7 @@ User.init(
     },
     favorite_subject: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     hidden_talent: {
       type: DataTypes.STRING,

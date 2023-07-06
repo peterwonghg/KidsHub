@@ -4,7 +4,7 @@
       <h5 class="card-title"
         style="font-size: 24px; font-weight: bold; text-align: center; color: #333; text-transform: uppercase; margin-bottom: 20px;">
         {{title}}</h5>
-      <p class="card-text">   {{description}}</p>
+      <p class="card-text">{{description}}</p>
       <h6 class="card-subtitle mb-2 text-muted">Price: ${{price}}</h6>
       <h6 class="card-subtitle mb-2 text-muted">Difficulty: {{difficulty_rating}}</h6>
       <h6 class="card-subtitle mb-2 text-muted">Start Date: {{formatRegistrationDate start_date}}</h6>
@@ -67,7 +67,7 @@
                 style="font-style: italic;">{{favorite_subject}}</span></p>
             <p style="margin: 5px 0;"><strong>Hobby:</strong> {{hobby}}</p>
           </div>
-          <a href="/users/{{id}}" class="btn btn-primary" style="margin-top: 10px;">See More Details</a>
+          <button class="btn btn-primary detailsBtn" data-skillId="{{../id}}" data-userId="{{id}}" style="margin-top: 10px;">See More Details</button>
         </div>
       </div>
     </div>
