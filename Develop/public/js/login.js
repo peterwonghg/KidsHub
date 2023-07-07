@@ -43,7 +43,7 @@ const signupFormHandler = async (event) => {
     const hidden_talent = document.querySelector('#hidden_talent-signup').value.trim();
 
   
-    if (name && email && password) {
+    if (name && email && password, age, hobby, favorite_subject) {
       const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({ name, email, password,age,gender,hobby,favorite_animal,favorite_food,favorite_sport,favorite_subject,hidden_talent }),
@@ -56,6 +56,8 @@ const signupFormHandler = async (event) => {
         console.log ('sign up failed')
         alert(response.statusText);
       }
+    }else{
+      alert("Please enter required fields.");
     }
 };
   
