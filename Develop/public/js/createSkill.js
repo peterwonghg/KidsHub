@@ -13,12 +13,13 @@ const newFormHandler = async (event) => {
     const price = document.querySelector('.skill-price').value.trim();
     const contact = document.querySelector('.skill-contact').value.trim();
     const place = document.querySelector('.skill-place').value.trim();
+    const address = document.querySelector('.skill-address').value.trim();
     
   
-    if (title && subtitle && description && price && contact && place && start_date && end_date && difficulty_rating && background_color) {
+    if (title && subtitle && description && price && address && contact && place && start_date && end_date && difficulty_rating && background_color) {
       const response = await fetch(`/api/skills`, {
         method: 'POST',
-        body: JSON.stringify({ title, subtitle, description, price, contact, place, image_url, start_date, end_date, difficulty_rating, background_color}),
+        body: JSON.stringify({ title, subtitle, description, price, address, contact, place, image_url, start_date, end_date, difficulty_rating, background_color}),
         headers: {
           'Content-Type': 'application/json',
         },
