@@ -76,7 +76,6 @@ header {
 .header-links a {
   margin-right: 10px;
   color: #007bff;
-
   text-decoration: none;
 
 }
@@ -137,4 +136,7 @@ footer {
   margin-bottom: 10px;
 }
 
+.admin-btn {
+  padding-top: 10px;
+}
 

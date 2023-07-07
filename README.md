@@ -4,6 +4,10 @@
 
 GitHub URL: https://github.com/peterwonghg/KidsHub.git
 
+Presentation Link: https://docs.google.com/presentation/d/1roBVV_9XJBcYx_t7EXdbCTqISmiF3Gi39HVuhEsOg-g/edit#slide=id.p
+
+Heroku Link: https://dashboard.heroku.com/apps/kidshub/deploy/heroku-git
+
 ## Table of Contents:
 ### - [Description](#description)
 ### - [Demo](#demo)
@@ -42,15 +46,8 @@ Join us at KidsHub and embark on an exhilarating journey of learning and growth 
 
 ## Demo
 
-### Video
-[![Demo Video](/Develop/public/images/play.png)](https://drive.google.com/file/d/1NTxsMa3XyHSoYVLb5i9C5jveKStziPG3/view)
-<br><br>
-
 ### Home Page
 ![Home Page](/Develop/public/images/01homePg.png)
-
-### Enrolment Page
-![Enrolment Page](/Develop/public/images/02enrolmentPg.png)
 
 ### Login Page
 ![Login Page](/Develop/public/images/03loginPg.png)
@@ -72,6 +69,9 @@ Join us at KidsHub and embark on an exhilarating journey of learning and growth 
 
 ### Admin Skill Create Page
 ![Admin Skill Create Page](/Develop/public/images/09adminSkillCreatePg.png)
+
+### Admin Skill Page
+![Admin Skill Page](/Develop/public/images/10adminSkillPg.png)
 <br><br>
 
 ## License
@@ -116,3 +116,13 @@ https://pixabay.com/illustrations/abc-alphabet-training-dictionary-2860036/
 
 "123" Image by OpenClipart-Vectors from Pixabay<br>
 https://www.clipartmax.com/download/m2i8i8A0Z5A0G6d3_123-png-sor-287usuna-uy-287un-351ekilleri-pulsuz-y-252kle-123-clipart/
+
+"Free Photo Kids Exploring Together The Nature"<br>
+Image by <a href="https://www.freepik.com/free-photo/kids-exploring-together-nature_15416069.htm#query=kids%20exploring&position=0&from_view=keyword&track=ais">Freepik</a>
+
+"Free Photo Kid Doing Homework"<br>
+Image by <a href="https://www.freepik.com/free-photo/kids-exploring-together-nature_15416069.htm#query=kids%20exploring&position=0&from_view=keyword&track=ais">Freepik</a>
+
+
+"Free Photo Kid Doing Experiments Medium Shot"<br>
+Image by <a href="https://www.freepik.com/free-photo/kids-doing-experiments-medium-shot_13360850.htm#query=science%20kids&position=5&from_view=keyword&track=ais">Freepik</a>

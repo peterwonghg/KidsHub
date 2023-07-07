@@ -42,8 +42,34 @@ router.get('/skills/update', authenticate, (req, res) => {
   res.render('update',
     {
       logged_in: req.session.logged_in,
-      user: req.session.user
+      user: req.session.user,
+      isAdmin: req.session.isAdmin,
     });
+});
+
+router.get('/users/:id', async (req, res) => {
+  try {
+    const userData = await Users.findByPk(req.params.id, {
+      include: [
+        {
+          model: Skills,
+        },
+      ],
+    });
+
+    const user = userData.get({ plain: true });
+    // console.log(user);
+
+    res.render('userpage', {
+      ...user,
+      logged_in: req.session.logged_in,
+      user: req.session.user,
+      isAdmin: req.session.isAdmin,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
@@ -58,12 +84,11 @@ router.get('/skills/:id', async (req, res) => {
     });
 
     const skill = skillData.get({ plain: true });
-    // console.log(skill);
+    console.log(skill);
     const allUsers_id = skill.users.map(user => user.id);
     const user_id = req.session.user ? req.session.user.id : null;
     if (allUsers_id.includes(user_id)) {
       req.session.save(() => {
-
         req.session.isEnrolled = true;
         res.render(
           'skillpage', {
@@ -72,21 +97,16 @@ router.get('/skills/:id', async (req, res) => {
           user: req.session.user,
           isAdmin: req.session.isAdmin,
           isEnrolled: req.session.isEnrolled,
-        }
-        )
+        })
       })
     } else {
-
       res.render('skillpage', {
         ...skill,
         logged_in: req.session.logged_in,
         user: req.session.user,
         isAdmin: req.session.isAdmin,
       });
-
     }
-
-
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

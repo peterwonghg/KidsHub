@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const dayjs = require('dayjs');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -19,6 +20,38 @@ User.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    age: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    hobby: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    favorite_food: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_sport: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_animal: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_subject: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    hidden_talent: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -49,7 +82,7 @@ User.init(
       },
       beforeValidate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        newUserData.registration_date = new Date();
+        newUserData.registration_date = dayjs();
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {

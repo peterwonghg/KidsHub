@@ -1,55 +1,64 @@
-<form class="new-skill-form">
-
-
-    <div>
-        <label for="title">Title:</label>
-        <input type="text" class="skill-title" id="title" name="title" required>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form class="update-skill-form">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control skill-title" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle">Subtitle:</label>
+                    <input type="text" class="form-control skill-subtitle" id="subtitle" name="subtitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" class="form-control skill-description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input id="price" class="form-control skill-price" name="price" required>
+                </div>
+                   <div class="form-group">
+                    <label for="contact">Contact:</label>
+                    <input id="contact" class="form-control skill-contact" name="contact" required>
+                </div>
+                 <div class="form-group">
+                    <label for="place">Location:</label>
+                    <input id="place" class="form-control skill-place" name="place" required>
+                </div>
+                <div class="form-group">
+                    <label for="place">Address:</label>
+                    <input id="place" class="form-control skill-address" name="place" required>
+                </div>
+                <div class="form-group">
+                    <label for="image_url">Image URL:</label>
+                    <input type="text" id="image_url" class="form-control skill-image_url" name="image_url">
+                </div>
+                <div class="form-group">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" id="start_date" class="form-control skill-start_date" name="start_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="end_date">End Date:</label>
+                    <input type="date" id="end_date" class="form-control skill-end_date" name="end_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="difficulty_rating">Difficulty Rating:</label>
+                    <input id="difficulty_rating" class="form-control difficulty_rating" name="difficulty_rating" required>
+                </div>
+                <div class="form-group">
+                    <label for="color">Color:</label>
+                    <input type="color" id="color" class="form-control background_color" name="color" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
     </div>
-
-    <div>
-        <label for="description">Description:</label>
-        <textarea id="description" class="skill-description" name="description" required></textarea>
-    </div>
-
-    <div>
-        <label for="price">Price:</label>
-        <textarea id="price" class="skill-price" name="price" required></textarea>
-    </div>
-    
-    <div>
-        <label for="image_url">Image URL:</label>
-        <input type="text" id="image_url" class="skill-image_url" name="image_url">
-    </div>
-
-    <div>
-        <label for="start_date">Start Date:</label>
-        <input type="date" id="start_date" class="skill-start_date" name="start_date" required>
-    </div>
-
-    <div>
-        <label for="end_date">End Date:</label>
-        <input type="date" id="end_date" class="skill-end_date" name="end_date" required>
-    </div>
-
-    <div>
-        <label for="difficulty_rating">Difficulty Rating:</label>
-        <select id="difficulty_rating" class="difficulty_rating" name="difficulty_rating" required>
-            <option value="easy">Easy</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
-        </select>
-    </div>
-
-    <div>
-        <label for="color">Color:</label>
-        <input type="color" id="color" class="background_color" name="color" required>
-    </div>
-
-    <div>
-        <input type="submit" value="Submit">
-    </div>
-</form>
+</div>
 
 {{#if isAdmin}}
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
 <script src="/js/updateSkill.js"></script>
 {{/if}}

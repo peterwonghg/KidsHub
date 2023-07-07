@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body style="background-color: #00539C">
+<body style="background-color: #ffffff">
 
-    <header style="background-color: #00539C">
+    <header style="background-color: #ffffff">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -23,9 +23,9 @@
                     <div class="text-right" style="tex">
                         {{#if logged_in}}
                         {{#if isAdmin}}
-                        <a href="/" class="mr-3 username"><strong>{{user.name}}</strong></a>
+                        <a href="/" class="mr-3 username"><strong>Hi {{user.name}}</strong></a>
                         {{else}}
-                        <a href="/profile" class="mr-3 username"><strong>{{user.name}}</strong></a>
+                        <a href="/profile" class="mr-3 username"><strong>Hi {{user.name}}</strong></a>
                         {{/if}}
                         <a href="/logout" class="mr-3 logOut"><strong>Log Out</strong></a>
                         {{else}}
@@ -44,20 +44,22 @@
         {{{ body }}}
     </main>
 
-    <footer style="background-color: #00539C">
+    <footer style="background-color: #ffffff">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row justify-content-center">
+                <div class="col text-center">
                     <a href="https://github.com/your-username">GitHub</a>
                 </div>
-                <div class="col">
-                    <div class="text-right">
-                        Created by Brenden | Harianto | Paichien
-                    </div>
+            </div>
+            <div class="row justify-content-center" style="text-style: black">
+                <div class="col text-center">
+                    Created by Brenden | Harianto | Paichien
                 </div>
             </div>
         </div>
     </footer>
+
+
 
     {{#if logged_in}}
     <script src="/js/logout.js"></script>

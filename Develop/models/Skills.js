@@ -15,8 +15,12 @@ Skills.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    subtitle: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     image_url: {
@@ -24,6 +28,18 @@ Skills.init(
       allowNull: true,
     },
     price: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    place: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    address:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    contact: {
       type: DataTypes.STRING,
       allowNull: false,
     },
