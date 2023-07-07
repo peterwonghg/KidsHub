@@ -14,9 +14,11 @@
                     <li><strong>Hidden Talent:</strong> {{hidden_talent}}</li>
                     <li><strong>Registration Date:</strong> {{formatRegistrationDate registration_date}}</li>
                 </ul>
+                {{#unless isAdmin}}
                 <div class="text-right">
                     <button class="btn btn-primary highFive" data-id="{{id}}">Send {{name}} a High Five!</button>
                 </div>
+                {{/unless}}
             </div>
 
         </div>

@@ -17,7 +17,7 @@ const highFiveButtonHandler = async (e) => {
         highFiveBtn.textContent= 'Sent!';
     }else{
         console.log('not ok');
-        document.location.replace('/login');
+        // document.location.replace('/login');
     }
 }
 
