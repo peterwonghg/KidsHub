@@ -15,7 +15,7 @@
                     <li><strong>Registration Date:</strong> {{formatRegistrationDate registration_date}}</li>
                 </ul>
                 <div class="text-right">
-                    <button class="btn btn-primary highFive" data-id="{{id}}">Send a High Five!</button>
+                    <button class="btn btn-primary highFive" data-id="{{id}}">Send {{name}} a High Five!</button>
                 </div>
             </div>
 
@@ -29,7 +29,8 @@
             <h2 class="mt-4 text-center">Enrolled Skills</h2>
             <div class="row">
                 {{#each skills as |skill|}}
-                <div class="col-md-6">
+                <a href="/skills/{{id}}" class="col-md-6"
+                    style="display: block; color: inherit; text-decoration: none;">
                     <div class="skill-panel bg-cards" style="background-color:{{background_color}}">
                         <div class="skill-panel-body">
                             <div class="row">
@@ -51,7 +52,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 {{/each}}
             </div>
         </div>
