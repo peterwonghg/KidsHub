@@ -4,6 +4,8 @@
 
 GitHub URL: https://github.com/peterwonghg/KidsHub.git
 
+Presentation Link: https://docs.google.com/presentation/d/1roBVV_9XJBcYx_t7EXdbCTqISmiF3Gi39HVuhEsOg-g/edit#slide=id.p
+
 ## Table of Contents:
 ### - [Description](#description)
 ### - [Demo](#demo)
