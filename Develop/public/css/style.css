@@ -139,3 +139,19 @@ footer {
 .admin-btn {
   padding-top: 10px;
 }
+
+
+@media screen and (min-width: 992px){
+.large-hide{
+  display: none;
+}
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+  .small-hide{
+    display: none;
+  }
+}
