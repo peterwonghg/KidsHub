@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const priceInput = document.querySelector('.skill-price');
     const contactInput = document.querySelector('.skill-contact');
     const placeInput = document.querySelector('.skill-place');
+    const addressInput = document.querySelector('.skill-address');
 
 
     const skill_id = localStorage.getItem('skill_id');
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         priceInput.value = data.skill.price;
         contactInput.value = data.skill.contact;
         placeInput.value = data.skill.place;
+        addressInput.value = data.skill.address;
         image_urlInput.value = data.skill.image_url;
         start_dateInput.value = dayjs(data.skill.start_date).format('YYYY-MM-DD');
         end_dateInput.value = dayjs(data.skill.end_date).format('YYYY-MM-DD');
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 price:priceInput.value.trim(),
                 contact:contactInput.value.trim(),
                 place:placeInput.value.trim(),
+                address:addressInput.value.trim(),
                 image_url:image_urlInput.value.trim(),
                 start_date:start_dateInput.value.trim(),
                 end_date:end_dateInput.value.trim(),

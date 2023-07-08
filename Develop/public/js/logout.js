@@ -1,9 +1,6 @@
 const logOut= document.querySelector('.logOut');
 
 
-function loginHandler(){
-    document.location.replace('/login');
-}
 
 const logout = async () => {
     const response = await fetch('/api/users/logout', {

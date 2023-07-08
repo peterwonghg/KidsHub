@@ -4,6 +4,10 @@
 
 GitHub URL: https://github.com/peterwonghg/KidsHub.git
 
+Presentation Link: https://docs.google.com/presentation/d/1roBVV_9XJBcYx_t7EXdbCTqISmiF3Gi39HVuhEsOg-g/edit#slide=id.p
+
+Heroku Link: https://dashboard.heroku.com/apps/kidshub/deploy/heroku-git
+
 ## Table of Contents:
 ### - [Description](#description)
 ### - [Demo](#demo)
@@ -65,6 +69,9 @@ Join us at KidsHub and embark on an exhilarating journey of learning and growth 
 
 ### Admin Skill Create Page
 ![Admin Skill Create Page](/Develop/public/images/09adminSkillCreatePg.png)
+
+### Admin Skill Page
+![Admin Skill Page](/Develop/public/images/10adminSkillPg.png)
 <br><br>
 
 ## License

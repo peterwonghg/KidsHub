@@ -1,18 +1,10 @@
 const router = require('express').Router();
 const { Skill_User, Users, Skills } = require('../../models');
-const nodemailer = require('nodemailer');
 require('dotenv').config();
 const dayjs = require('dayjs');
+const transporter= require('../../config/mailerConnection');
 
-const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false, // Set it to true if using a secure connection (SSL/TLS)
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-    },
-});
+
 
 
 
@@ -37,9 +29,9 @@ router.post('/enrollments', async (req, res) => {
         const skillEndDate = dayjs(skill.end_date).format('DD/MM/YYYY');
         const skillPrice = skill.price;
         const skillPlace = skill.place;
+        const skillAddress = skill.address;
         const skillContact = skill.contact;
-        console.log(user, skill);
-        // console.log(newEnrollment, userData, userName, userEmail, skillData, skillTitle, skillDescription, skillStartDate, skillEndDate);
+    
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: userEmail,
@@ -53,7 +45,8 @@ router.post('/enrollments', async (req, res) => {
             <p>and the end date is on <strong>${skillEndDate}</strong>.</p><br><br>
             <p>The fee is <strong>$${skillPrice}</strong>, you may pay when you're here.</p><br><br>
             <p>Contact: <strong>${skillContact}</strong></p><br><br>
-            <p>Place: <strong>${skillPlace}</strong></p><br><br>
+            <p>Location: <strong>${skillPlace}</strong></p><br><br>
+            <p>Address: <strong>${skillAddress}</strong></p><br><br>
             <p>Your friends at,<p><br><br>
             <p>KidsHub Team<p>`,
         };
