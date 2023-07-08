@@ -24,7 +24,9 @@ const loginFormHandler = async (event) => {
       } else {
         alert(response.statusText);
       }
-    }
+    }else{
+      alert("Please enter required fields.");
+    };
 };
   
 const signupFormHandler = async (event) => {

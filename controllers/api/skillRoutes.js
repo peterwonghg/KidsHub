@@ -22,6 +22,20 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const skillData = await Skills.findAll();
+
+    const skill = skillData.map((skill) => skill.get({ plain: true }));
+    res.status(200).json({
+      skill, 
+    })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     console.log('hohoho')

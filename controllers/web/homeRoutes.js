@@ -22,6 +22,32 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/search/', async (req, res) => {
+  try {
+    console.log(req.query.q);
+    const query = req.query.q;
+    const skillData = await Skills.findAll();
+    const skills = skillData.map((skill) => skill.get({ plain: true }));
+    const filteredSkills = skills.filter((skill) => {
+      return (
+        skill.title.toLowerCase().includes(query) ||
+        skill.subtitle.toLowerCase().includes(query) ||
+        skill.place.toLowerCase().includes(query)
+      );
+    });
+      res.render('homepage', {
+        filteredSkills,
+        logged_in: req.session.logged_in,
+        user: req.session.user,
+        isAdmin: req.session.isAdmin,
+      });
+    
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
 router.get('/skills/create', authenticate, (req, res) => {
   try {
 
