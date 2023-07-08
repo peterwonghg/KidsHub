@@ -162,6 +162,31 @@ const data = [
     skill_id: 10,
     enrolment_date: dayjs(),
   },
+  {
+    user_id: 6,
+    skill_id: 11,
+    enrolment_date: dayjs(),
+  },
+  {
+    user_id: 6,
+    skill_id: 12,
+    enrolment_date: dayjs(),
+  },
+  {
+    user_id: 7,
+    skill_id: 13,
+    enrolment_date: dayjs(),
+  },
+  {
+    user_id: 8,
+    skill_id: 13,
+    enrolment_date: dayjs(),
+  },
+  {
+    user_id: 9,
+    skill_id: 12,
+    enrolment_date: dayjs(),
+  },
 ];
 
 const seedSkill_Users = () => Skill_User.bulkCreate(data);
