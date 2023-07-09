@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsHub</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body style="background-color: #ffffff">
+
+    <header style="background-color: #ffffff">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="/" class="header-title" id="header-title">KidsHub</a>
+                </div>
+                <div class="col">
+                    <div class="text-right" style="tex">
+                        {{#if logged_in}}
+                        {{#if isAdmin}}
+                        <a href="/" class="mr-3 username"><strong>Hi {{user.name}}</strong></a>
+                        {{else}}
+                        <a href="/profile" class="mr-3 username"><strong>Hi {{user.name}}</strong></a>
+                        {{/if}}
+                        <a href="/logout" class="mr-3 logOut"><strong>Log Out</strong></a>
+                        {{else}}
+                        <a href="/login" class="mr-3 logIn"><strong>Log In</strong></a>
+                        <a href="/login" class="ml-3 signUp"><strong>Sign Up</strong></a>
+                        {{/if}}
+
+                    </div>
+                    <form action="/search/" method="GET" class="form large-hide search-form col-12">
+                                    <div class="form-group col-12 input-group mt-3">
+                                        <input type="text" class="form-control" name="q" placeholder="Search...">
+                                        <button class="btn" type="submit" id="searchButton">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" style="color: dark grey;"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                    <nav class="navbar navbar-expand-lg small-hide bg-body-tertiary">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/search/?q=math"
+                                            style="color: rgb(117, 115, 115); font-weight: 500">Math</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/search/?q=writing"
+                                            style="color: rgb(117, 115, 115); font-weight: 500">Writing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/search/?q=science"
+                                            style="color: rgb(117, 115, 115); font-weight: 500">Science</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/search/?q=coding"
+                                            style="color: rgb(117, 115, 115); font-weight: 500">Coding</a>
+                                    </li>
+
+                                </ul>
+                                <form action="/search/" method="GET" class="form search-form col-7">
+                                    <div class="form-group col-12 input-group mt-3">
+                                        <input type="text" class="form-control" name="q" placeholder="Search...">
+                                        <button class="btn" type="submit" id="searchButton">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" style="color: dark grey;"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        {{{ body }}}
+    </main>
+
+    <footer style="background-color: #ffffff">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col text-center">
+                    <a href="https://github.com/your-username">GitHub</a>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="text-style: black">
+                <div class="col text-center">
+                    Created by Brenden | Harianto | Paichien
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>

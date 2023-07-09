@@ -40,7 +40,7 @@ Skill_User.init(
             beforeBulkCreate: async (skillUsers) => {
                 skillUsers.forEach((skillUser) => {
                     // console.log('heya', dayjs().format('DD/MM/YYYY'))
-                    console.log(skillUser)
+                    // console.log(skillUser)
                     skillUser.enrolment_date = dayjs().format('DD/MM/YYYY')
                 })
             },

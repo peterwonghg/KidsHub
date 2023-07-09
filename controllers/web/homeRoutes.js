@@ -24,6 +24,7 @@ router.get('/', async (req, res) => {
 
 router.get('/search/', async (req, res) => {
   try {
+    console.log(req.query.q);
     const query = req.query.q;
     const skillData = await Skills.findAll();
     const skills = skillData.map((skill) => skill.get({ plain: true }));
