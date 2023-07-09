@@ -75,7 +75,7 @@ const data = [
     title: "Journalism 101",
     subtitle: "Become a Skilled Investigative Journalist",
     description: "Unleash your passion for truth and justice with Journalism 101. This comprehensive course will equip you with the skills and knowledge to become a skilled investigative journalist. Learn the art of conducting interviews, gathering reliable sources, and crafting compelling news articles. Dive into the world of investigative reporting, uncover hidden stories, and shed light on important issues. With hands-on assignments and real-world scenarios, you'll develop the critical thinking and storytelling abilities needed to make a difference through journalism.",
-    image_url: "/images/journalism.jpg",
+    image_url: "/images/Journalism.jpg",
     price: "129.99",
     place: "Perth, WA",
     address: "505 News Avenue, Perth, WA",
