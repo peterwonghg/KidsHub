@@ -2,7 +2,7 @@ const Users = require('./Users');
 const Skills = require('./Skills');
 
 
-const Skill_User = require('./skill_user');
+const Skill_User = require('./Skill_User');
 
 Users.hasMany(Skill_User, {
   foreignKey: 'user_id',
