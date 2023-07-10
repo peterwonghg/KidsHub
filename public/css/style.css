@@ -140,6 +140,13 @@ footer {
   padding-top: 10px;
 }
 
+main {
+  flex-grow: 1;
+}
+
+body {
+  height: 100%;
+}
 
 @media screen and (min-width: 992px){
 .large-hide{
