@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
     <div class="row">
         {{#if filteredSkills}}
         {{#each filteredSkills as |skill|}}
@@ -14,8 +14,6 @@
                     <p class="card-text">
                     <h6>Location: {{place}}</h6>
                     </p>
-                    {{!-- <a href="/skills/{{id}}" class="btn btn-primary">See More Details</a> --}}
-
                     {{#if ../isAdmin}}
                     <div class="admin-btn">
                         <button class="btn btn-secondary editBtn" data-id="{{id}}">Edit</button>
