@@ -6,7 +6,7 @@ GitHub URL: https://github.com/peterwonghg/KidsHub.git
 
 Presentation Link: https://docs.google.com/presentation/d/1roBVV_9XJBcYx_t7EXdbCTqISmiF3Gi39HVuhEsOg-g/edit#slide=id.p
 
-Heroku Link: https://dashboard.heroku.com/apps/kidshub/deploy/heroku-git
+Heroku Link: https://morning-reef-37126-3c2d5ab785ed.herokuapp.com/
 
 ## Table of Contents:
 ### - [Description](#description)
@@ -47,31 +47,31 @@ Join us at KidsHub and embark on an exhilarating journey of learning and growth 
 ## Demo
 
 ### Home Page
-![Home Page](/Develop/public/images/01homePg.png)
+![Home Page](/public/images/01homePg.png)
 
 ### Login Page
-![Login Page](/Develop/public/images/03loginPg.png)
+![Login Page](/public/images/03loginPg.png)
 
 ### Sign-up Page
-![Sign Up Page](/Develop/public/images/04signupPg.png)
+![Sign Up Page](/public/images/04signupPg.png)
 
 ### Skills Page
-![Skills Page](/Develop/public/images/05skillPg.png)
+![Skills Page](/public/images/05skillPg.png)
 
 ### User Profile Page
-![User Profile Page](/Develop/public/images/06userProfilePg.png)
+![User Profile Page](/public/images/06userProfilePg.png)
 
 ### Admin Profile Page
-![Admin Profile Page](/Develop/public/images/07adminProfilePg.png)
+![Admin Profile Page](/public/images/07adminProfilePg.png)
 
 ### Admin Skill Update Page
-![Admin Skill Update Page](/Develop/public/images/08adminSkillUpdatePg.png)
+![Admin Skill Update Page](/public/images/08adminSkillUpdatePg.png)
 
 ### Admin Skill Create Page
-![Admin Skill Create Page](/Develop/public/images/09adminSkillCreatePg.png)
+![Admin Skill Create Page](/public/images/09adminSkillCreatePg.png)
 
 ### Admin Skill Page
-![Admin Skill Page](/Develop/public/images/10adminSkillPg.png)
+![Admin Skill Page](/public/images/10adminSkillPg.png)
 <br><br>
 
 ## License

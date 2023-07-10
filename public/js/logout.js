@@ -12,7 +12,7 @@ const logout = async () => {
       document.location.replace('/');
     } else {
       console.log(err);
-      alert(response.statusText);
+      document.location.replace('/');
     }
 };
 
